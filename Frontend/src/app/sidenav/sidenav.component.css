@@ -1,0 +1,83 @@
+
+    .mat-icon {
+        vertical-align: middle;
+        margin-right: 1rem;
+      }
+    
+    .logo {
+      text-align: center;
+      padding: 0rem 1rem;
+      margin-bottom: 0.5rem;
+     
+    }
+    .page__title span {
+        width: 200px;
+        color:white;
+        font-style: italic;
+        font-size: 25px;
+        font-family:Georgia, 'Times New Roman', Times, serif;
+        margin-left: 50px;
+      }
+  
+      .page__title:hover span{
+        color: #fff;
+        text-shadow: 0 0 10px #fff,
+                     0 0 20px #fff, 
+                     0 0 40px #fff;
+        letter-spacing: 3px;
+      }
+  
+      .page__title span{
+        transition: .5s linear
+      }
+    
+    
+    .mat-divider {
+      border-top-width: 2px;
+      border-color: white;
+    }
+    .mat-list-item {
+      color: #ced3da !important;
+      font-size: 0.8rem;
+      height: 44px !important;
+      margin-bottom: 4px;
+    }
+      .mat-list-item:hover {
+        color: #f2f5f7 !important;
+      }
+      
+        .mat-list-item-content {
+          border-radius: 5px;
+          margin: 0 8px;
+        }
+        .mat-list-item-content:hover {
+            background: #2c3344 !important;
+     
+        }
+      
+    
+    .list-item-active {
+       background: blue !important;
+       border-radius: 0 2rem 2rem 0;
+    }
+       .list-item-active:hover {
+         background: blue;
+       
+    
+      color: #f2f5f7 !important;
+       }
+        .mat-list-item-content {
+          background: #2c3344 !important;
+        }
+        .mat-list-item-content  hover {
+            background: #2c3344 !important;
+          }
+        
+      
+    .mat-subheader {
+      color: #818cf8;
+      font-size: 0.6rem;
+      font-weight: 100;
+      letter-spacing: 1px;
+    }
+    

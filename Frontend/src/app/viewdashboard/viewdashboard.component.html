@@ -1,0 +1,30 @@
+<div class="grid-container"  *ngFor="let card of card">
+  <!-- <h1 class="mat-h1"><span>Resumes</span></h1> -->
+  <mat-grid-list cols="2"  rowHeight="250px"   colspan="card.cols" rowspan="card.rows">
+    <mat-grid-tile >
+      <mat-card class="dashboard-card">
+        <!-- <mat-card-header> -->
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <a href="{{card.doc}}" target="blank"><button mat-menu-item >View</button></a>
+              <a routerLink=""><button mat-menu-item>Remove</button></a>
+            </mat-menu>
+          </mat-card-title>
+        <!-- </mat-card-header> -->
+       
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <pdf-viewer [src]="card.doc"
+            [render-text]="false" style="display: block;" [fit-to-page]='true' [autoresize]="true"  [show-all]="false">
+           </pdf-viewer>
+          </div> 
+        </mat-card-content>
+     
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
