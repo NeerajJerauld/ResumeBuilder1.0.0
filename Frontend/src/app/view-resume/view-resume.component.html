@@ -1,1 +1,10 @@
-<p>view-resume works!</p>
+<div>
+    <pdf-viewer [src]="doc"
+    [render-text]="false" style="display: block;" [fit-to-page]='true' [autoresize]="true"  [show-all]="false">
+   </pdf-viewer>
+   
+</div> 
+<div>
+    <button>Edit</button>
+   <button>Download</button>
+</div>

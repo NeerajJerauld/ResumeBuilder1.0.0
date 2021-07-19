@@ -15,7 +15,8 @@ const routes: Routes = [
   {path:"signin",component:SigninComponent},
   {path:"templates",component:TemplatesComponent},
   {path:"viewresume",component:ViewResumeComponent},
-  {path:"viewwebsite",component:ViewWebsiteComponent}
+  {path:"viewwebsite",component:ViewWebsiteComponent},
+  
 ];
 
 @NgModule({
