@@ -12,6 +12,26 @@ import { ViewResumeComponent } from './view-resume/view-resume.component';
 import { ViewWebsiteComponent } from './view-website/view-website.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { ViewdashboardComponent } from './viewdashboard/viewdashboard.component';
+import { LayoutModule } from '@angular/cdk/layout';
 
 
 @NgModule({
@@ -25,6 +45,9 @@ import { FooterComponent } from './footer/footer.component';
     ViewWebsiteComponent,
     NavbarComponent,
     FooterComponent,
+    HomeComponent,
+    SidenavComponent,
+    ViewdashboardComponent,
    
   ],
   imports: [
@@ -32,7 +55,23 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+       // * MATERIAL IMPORTS
+       MatSidenavModule,
+       MatToolbarModule,
+       MatMenuModule,
+       MatIconModule,
+       MatDividerModule,
+       MatListModule,
+       BrowserAnimationsModule,
+       MatGridListModule,
+       MatCardModule,
+       MatButtonModule,
+       LayoutModule,
+
+    PdfViewerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
