@@ -33,6 +33,7 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ViewdashboardComponent } from './viewdashboard/viewdashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { EducationComponent } from './education/education.component';
     SidenavComponent,
     ViewdashboardComponent,
     EducationComponent,
+    ExperienceComponent,
    
   ],
   imports: [
