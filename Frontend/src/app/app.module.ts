@@ -32,6 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ViewdashboardComponent } from './viewdashboard/viewdashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 
 @NgModule({
@@ -48,6 +50,8 @@ import { LayoutModule } from '@angular/cdk/layout';
     HomeComponent,
     SidenavComponent,
     ViewdashboardComponent,
+    EducationComponent,
+    ExperienceComponent,
    
   ],
   imports: [
