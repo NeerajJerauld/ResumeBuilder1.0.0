@@ -14,28 +14,61 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="logo-font-family">
+            <!-- <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top"> -->
+            Innovo  
+          </a>
+        </div>
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <button class="btn btn-outline-primary ms-5 me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page" routerLink="dashboard"
+          <li class="nav-item ">
+            <button class="btn btn-sm btn-outline-success me-2 " type="button">
+              <a class="nav-link active " aria-current="page" routerLink="home"
+                >Home</a
+              >
+            </button>
+          </li>
+          <li class="nav-item ">
+            <button class="btn btn-sm btn-outline-success me-2 " type="button">
+              <a class="nav-link active " aria-current="page" routerLink="dashboard"
                 >Dashboard</a
               >
             </button>
           </li>
-          <!-- <li class="nav-item">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page" routerLink="/booklist"
-                >Books</a
+          <li class="nav-item ">
+            <button class="btn btn-sm btn-outline-success me-2 " type="button">
+              <a class="nav-link active " aria-current="page" routerLink="templates"
+                >Templates</a
               >
             </button>
           </li>
-          <li class="nav-item">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page" routerLink="/authorlist"
-                >Authors</a
+          <li class="nav-item ">
+            <button class="btn btn-sm btn-outline-success me-2 " type="button">
+              <a class="nav-link active " aria-current="page" routerLink="login"
+                >Login</a
               >
             </button>
           </li>
+          <li class="nav-item ">
+            <button class="btn btn-sm btn-outline-success me-2 " type="button">
+              <a class="nav-link active " aria-current="page" routerLink="signin"
+                >SignIn</a
+              >
+            </button>
+          </li>
+          
+          <li class="nav-item ">
+            <button class="btn btn-sm btn-outline-success me-2 " type="button">
+              <a class="nav-link active " aria-current="page" routerLink="home"
+                >Logout</a
+              >
+            </button>
+          </li>
+
+
+
+
+          <!-- *****************TO BE DELETED *********************
           <li class="nav-item" *ngIf="_auth.loggedIn()">
             <button class="btn btn-outline-primary me-2 " type="button">
               <a class="nav-link active text-white" aria-current="page"   routerLink="/addbook"
@@ -56,7 +89,8 @@
                 >Log Out</a
               >
             </button>
-          </li> -->
+          </li> 
+        *********************************************-->
   
   
           
