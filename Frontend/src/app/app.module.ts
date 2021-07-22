@@ -34,6 +34,13 @@ import { ViewdashboardComponent } from './viewdashboard/viewdashboard.component'
 import { LayoutModule } from '@angular/cdk/layout';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
+import { FormsComponent } from './forms/forms.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { LanguageComponent } from './language/language.component';
+import { SkillsComponent } from './skills/skills.component';
+import { CertificateComponent } from './certificate/certificate.component';
+import { InterestsComponent } from './interests/interests.component';
 
 
 @NgModule({
@@ -52,6 +59,13 @@ import { ExperienceComponent } from './experience/experience.component';
     ViewdashboardComponent,
     EducationComponent,
     ExperienceComponent,
+    FormsComponent,
+    UserDetailsComponent,
+    ProjectsComponent,
+    LanguageComponent,
+    SkillsComponent,
+    CertificateComponent,
+    InterestsComponent,
    
   ],
   imports: [
