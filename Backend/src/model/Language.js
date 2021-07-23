@@ -10,7 +10,7 @@ const LanguageSchema = new Schema({
   id: { type: String, unique: true },
   userid: String,
   languagename: String,
-  proficiency: String,
+  language: String,
 });
 
 var LanguageData = mongoose.model("languagedata", LanguageSchema);
