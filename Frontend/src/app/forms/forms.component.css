@@ -1,0 +1,23 @@
+.mainform{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    align-content: center;
+    height: 100%;
+}
+.Left{
+    background-color:aquamarine;
+    width: 15%;
+    height: 100%;
+    border-radius: 10px;
+}
+.right{
+    background-color: cyan;
+    color: black;
+    width:85%;
+    height: 100%;
+    border-radius: 10px;
+}
+#outlet{
+    align-content: center;
+}

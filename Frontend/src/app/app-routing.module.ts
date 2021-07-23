@@ -25,17 +25,17 @@ const routes: Routes = [
   {path:"templates",component:TemplatesComponent},
   {path:"viewresume",component:ViewResumeComponent},
   {path:"viewwebsite",component:ViewWebsiteComponent},
-  // {path:"add", component:FormsComponent,
-  // children: [
-  //   {path:"education",component:EducationComponent},
-  //   {path:"experience", component:ExperienceComponent},
-  //   {path:"skills", component:SkillsComponent},
-  //   {path:"interests",component:InterestsComponent},
-  //   {path:"language",component:LanguageComponent},
-  //   {path:"projects",component:ProjectsComponent},
-  //   {path:"userDetails",component:UserDetailsComponent},
-  //   {path:"certificate",component:CertificateComponent}  
-  // ]}
+  {path:"addforms", component:FormsComponent,
+  children: [
+    {path:"education",component:EducationComponent},
+    {path:"experience", component:ExperienceComponent},
+    {path:"skills", component:SkillsComponent},
+    {path:"interests",component:InterestsComponent},
+    {path:"language",component:LanguageComponent},
+    {path:"projects",component:ProjectsComponent},
+    {path:"userDetails",component:UserDetailsComponent},
+    {path:"certificate",component:CertificateComponent}  
+  ]}
   
 ];
 
