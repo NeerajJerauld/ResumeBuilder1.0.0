@@ -35,7 +35,15 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterframeComponent } from './registerframe/registerframe.component';
 import { RouterModule } from '@angular/router';
-
+import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { FormsComponent } from './forms/forms.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { LanguageComponent } from './language/language.component';
+import { SkillsComponent } from './skills/skills.component';
+import { CertificateComponent } from './certificate/certificate.component';
+import { InterestsComponent } from './interests/interests.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +60,15 @@ import { RouterModule } from '@angular/router';
     SidenavComponent,
     ViewdashboardComponent,
     RegisterframeComponent,
-   
+    EducationComponent,
+    ExperienceComponent,
+    FormsComponent,
+    UserDetailsComponent,
+    ProjectsComponent,
+    LanguageComponent,
+    SkillsComponent,
+    CertificateComponent,
+    InterestsComponent,
   ],
   imports: [
     BrowserModule,
