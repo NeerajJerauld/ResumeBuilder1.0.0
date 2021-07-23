@@ -32,15 +32,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ViewdashboardComponent } from './viewdashboard/viewdashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { EducationComponent } from './education/education.component';
-import { ExperienceComponent } from './experience/experience.component';
-import { FormsComponent } from './forms/forms.component';
-import { UserDetailsComponent } from './user-details/user-details.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { LanguageComponent } from './language/language.component';
-import { SkillsComponent } from './skills/skills.component';
-import { CertificateComponent } from './certificate/certificate.component';
-import { InterestsComponent } from './interests/interests.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterframeComponent } from './registerframe/registerframe.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -57,15 +51,7 @@ import { InterestsComponent } from './interests/interests.component';
     HomeComponent,
     SidenavComponent,
     ViewdashboardComponent,
-    EducationComponent,
-    ExperienceComponent,
-    FormsComponent,
-    UserDetailsComponent,
-    ProjectsComponent,
-    LanguageComponent,
-    SkillsComponent,
-    CertificateComponent,
-    InterestsComponent,
+    RegisterframeComponent,
    
   ],
   imports: [
@@ -88,8 +74,9 @@ import { InterestsComponent } from './interests/interests.component';
        MatButtonModule,
        LayoutModule,
 
-    PdfViewerModule
-
+    PdfViewerModule,
+      NgbModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,41 @@
+<div class="container ">
+  <div class="row g-0">
+    <div class="col-lg-6 ">
+      <img src="../../assets/images/hi.png" alt="" style="width: 100%;height:100%;object-fit: fill ;">
+    </div>
+    <div class="col-lg-6   ">
+      <div class="col bg-light d-flex justify-content-center">
+   
+        <form [formGroup]="radioGroupForm">
+          <div class="btn-group btn-group-toggle btn-primary  rounded-pill " ngbRadioGroup name="radioBasic" formControlName="model">
+            <label ngbButtonLabel >
+              <a
+            class="nav-link active text-light "
+            aria-current="page"
+            routerLink="login"
+            >Login</a
+          >
+            </label>
+            <label ngbButtonLabel >
+              <a
+              class="nav-link active text-light"
+              aria-current="page"
+              routerLink="signin"
+              >Signin</a
+            >
+            </label>
+            <!-- <label ngbButtonLabel class="btn-primary">
+              <input ngbButton type="radio" [value]="false"> Right
+            </label> -->
+          </div>
+        </form>
+        <!-- <hr>
+        <pre>{{radioGroupForm.value['model']}}</pre> -->
+      </div>
+      <div class="col bg-primary">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+

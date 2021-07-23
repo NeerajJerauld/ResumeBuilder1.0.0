@@ -1,0 +1,6 @@
+myBackgroundImage{
+    background-image: url("../../assets/images/InnovoLogo.png");
+}
+btn-hover-color:hover{
+    background-color: green !important;
+}
