@@ -32,6 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ViewdashboardComponent } from './viewdashboard/viewdashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterframeComponent } from './registerframe/registerframe.component';
 
 
 @NgModule({
@@ -48,6 +50,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     HomeComponent,
     SidenavComponent,
     ViewdashboardComponent,
+    RegisterframeComponent,
    
   ],
   imports: [
@@ -70,7 +73,8 @@ import { LayoutModule } from '@angular/cdk/layout';
        MatButtonModule,
        LayoutModule,
 
-    PdfViewerModule
+    PdfViewerModule,
+      NgbModule
 
   ],
   providers: [],

@@ -7,6 +7,7 @@ import { SigninComponent } from './signin/signin.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { ViewResumeComponent } from './view-resume/view-resume.component';
 import { ViewWebsiteComponent } from './view-website/view-website.component';
+import { RegisterframeComponent } from './registerframe/registerframe.component';
 
 const routes: Routes = [
   {path:"home",component:HomeComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path:"templates",component:TemplatesComponent},
   {path:"viewresume",component:ViewResumeComponent},
   {path:"viewwebsite",component:ViewWebsiteComponent},
-  
+  {path:"registerframe",component:RegisterframeComponent},
 ];
 
 @NgModule({
