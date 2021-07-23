@@ -87,35 +87,43 @@ function verifyToken(req, res, next) {
 //     });
 // })
 
-app.post('/login', (req, res) => {
-    let userData = req.body
-    
-          
-        if (userData.username===username && password === userData.password) {
-          let payload = {subject: username+password}
-          let token = jwt.sign(payload, 'secretKey')
-          res.status(200).send({token})
-         // res.status(401).send('Invalid Username')
-        } else  {
+
+function checkuser(req,res, next){
+  console.log(req.body)
+useremail=req.body.username;
+userpassword=req.body.password;
+console.log(useremail)
+console.log(userpassword)
+Credentialdata.findOne({username:useremail})
+.then(function(data){
+  console.log(data)
+if(username == useremail && password == userpassword){
+  console.log("You are in Admin");
+  next()
+} else if (useremail==data?.username && userpassword == data?.password){
+  console.log("you are in user")
+  next()}else{
+  res.status(401).send('Invalid Login Attempt')
+}})}    
+app.post('/login',checkuser, (req, res) => {
+useremail=req.body.username;
+userpassword=req.body.password;
+if(useremail==username && userpassword==password){
+    let payload = {subject: username+password}
+    let token = jwt.sign(payload, 'secretKey')
+    res.status(200).send({token})
+}else{
+let payload = {subject: userpassword+useremail}
+    let token = jwt.sign(payload, 'secretKey')
+    res.status(200).send({token})}})
+
+//signup
+
+//adding userdata in server
 
 
-          Credentialdata.find({"username":userData.username})
-          .then((user)=>{
-            if(user[0].password===userData.password)
-              res.status(200).send();//for other user
-            else{
-              res.status(401).send('Invalid Password')
-            }
-             
-          })
-          .catch(()=>{
 
-            res.status(403).send({message:"User doesnot exist"});
-        })
 
-        }
-      
-    })
 
 //     app.put('/update/:oldtitle',(req,res)=>{
 //       console.log("Hello inside put"+req.body.title +"   o"+req.params.oldtitle)
