@@ -16,6 +16,7 @@ import { TemplatesComponent } from './templates/templates.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ViewResumeComponent } from './view-resume/view-resume.component';
 import { ViewWebsiteComponent } from './view-website/view-website.component';
+import { RegisterframeComponent } from './registerframe/registerframe.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:"templates",component:TemplatesComponent},
   {path:"viewresume",component:ViewResumeComponent},
   {path:"viewwebsite",component:ViewWebsiteComponent},
+  {path:"registerframe",component:RegisterframeComponent},
   {path:"addforms", component:FormsComponent,
   children: [
     {path:"education",component:EducationComponent},
