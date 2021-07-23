@@ -4,20 +4,92 @@
     width:100%;
     align-content: center;
     height: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  
 }
-.Left{
-    background-color:aquamarine;
-    width: 15%;
-    height: 100%;
-    border-radius: 10px;
-}
+
+.list-items li:first-child{
+    border-top: none;
+  }
+
 .right{
-    background-color: cyan;
+    
     color: black;
     width:85%;
     height: 100%;
     border-radius: 10px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    
 }
 #outlet{
     align-content: center;
 }
+
+.wrapper{
+    height: 100%;
+    width: 200px;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+  }
+
+  .list-items{
+    position: relative;
+    background: #404040;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+  }
+  .list-items li{
+    padding-left: 1px;
+    line-height: 50px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #333;
+    transition: all 0.3s ease;
+  }
+   .list-items li:hover{
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0px 10px 3px #222;
+  }
+ 
+  .list-items li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 300;
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+ .list-items li a i{
+    margin-right: 20px;
+  }
+
+
+  .list-items  a:first-child{
+    margin-left: 0px;
+  }
+  .list-items  a{
+    height: 100%;
+    width: 30px;
+    display: block;
+    margin: 0 5px;
+    font-size: 18px;
+    color: #f2f2f2;
+    background: #4a4a4a;
+    border-radius: 5px;
+    border: 1px solid #383838;
+    transition: all 0.3s ease;
+  }
+  .list-items  a:hover{
+    background: #404040;
+  }
