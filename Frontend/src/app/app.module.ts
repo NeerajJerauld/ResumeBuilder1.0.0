@@ -34,6 +34,7 @@ import { ViewdashboardComponent } from './viewdashboard/viewdashboard.component'
 import { LayoutModule } from '@angular/cdk/layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterframeComponent } from './registerframe/registerframe.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -74,8 +75,8 @@ import { RegisterframeComponent } from './registerframe/registerframe.component'
        LayoutModule,
 
     PdfViewerModule,
-      NgbModule
-
+      NgbModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
