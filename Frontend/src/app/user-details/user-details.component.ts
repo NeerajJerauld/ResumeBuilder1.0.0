@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { FormservicesService } from '../formservices.service';
 
 @Component({
   selector: 'app-user-details',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
   title = 'User Details';
-  constructor() { }
+  constructor(private router:Router, private FormServices:FormservicesService) { }
+  userDetails= {
+    name:'',
+    image:'',
+    email:'',
+    phoneNumber:'',
+    address:'',
+    city:'',
+    pincode:''
+  }
+
+  navigate(){
+    this.router.navigate(["/form1"]);
+    this.FormServices.setuserDetails(this.userDetails);
+  }
+
 
   ngOnInit(): void {
+    this.userDetails=this.FormServices.getuserDetails()
   }
 
 }
