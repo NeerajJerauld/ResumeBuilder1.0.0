@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup,FormControl,FormBuilder,Validator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { RegisterimageService } from '../registerimage.service';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class SigninComponent implements OnInit {
     repassword:''
   }
   passwordMatch=""
-  constructor(private router:Router,private auth:AuthService) { }
+  constructor(private router:Router,private auth:AuthService,private data:RegisterimageService) { }
   verify(){
     
     if(this.user.password!=this.user.repassword){
@@ -32,6 +33,7 @@ export class SigninComponent implements OnInit {
    
     this.auth.addNewMember(this.user).subscribe(res=>{
       alert("Successful")
+      this.data.changeMessage("../../assets/images/registerLogin.png")
       this.router.navigate(["/login"]);
 
     },(error) => {                              //Error callback
