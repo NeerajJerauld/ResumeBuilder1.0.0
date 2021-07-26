@@ -28,7 +28,7 @@
             >
           </button>
         </li>
-        <li class="nav-item">
+        <li class="nav-item " *ngIf="_auth.loggedIn()">
           <button class="btn btn-sm btn-outline-success me-2" type="button">
             <a
               class="nav-link active"
@@ -48,21 +48,29 @@
             >
           </button>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="_auth.loggedIn() === false">
           <button
             class="btn btn-sm btn-outline-success me-2"
             type="button"
             (click)="openLg(content)"
             data-toggle="modal"
             data-target="#exampleModal"
+            (click)="loginImage()"
           >
             <a class="nav-link active" aria-current="page" routerLink="login"
               >Login</a
             >
           </button>
         </li>
-        <li class="nav-item">
-          <button class="btn btn-sm btn-outline-success me-2" type="button">
+        <li class="nav-item" *ngIf="_auth.loggedIn() === false">
+          <button
+            class="btn btn-sm btn-outline-success me-2"
+            type="button"
+            (click)="openLg(content)"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            (click)="signinImage()"
+          >
             <a class="nav-link active" aria-current="page" routerLink="signin"
               >SignIn</a
             >
@@ -71,35 +79,12 @@
 
         <li class="nav-item">
           <button class="btn btn-sm btn-outline-success me-2" type="button">
-            <a class="nav-link active" aria-current="page" routerLink=""
+            <a class="nav-link active" aria-current="page" (click)="logOut()"
               >Logout</a
             >
           </button>
         </li>
 
-        <!-- *****************TO BE DELETED *********************
-          <li class="nav-item" *ngIf="_auth.loggedIn()">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page"   routerLink="/addbook"
-                >Add Book</a
-              >
-            </button>
-          </li>
-          <li class="nav-item " *ngIf="_auth.loggedIn()">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page"   routerLink="/addauthor"
-                >Add Author</a
-              >
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page"(click)="logOut()"
-                >Log Out</a
-              >
-            </button>
-          </li> 
-        *********************************************-->
       </ul>
     </div>
   </div>
@@ -108,16 +93,41 @@
 <!-- ------------------------------------------ -->
 
 <ng-template #content let-modal>
-  <!-- <div class="modal-header">
-    <h4 class="modal-title">Modal title</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div> -->
   <div class="modal-body">
-    <app-registerframe></app-registerframe>
-  </div>
+
+
+    <div class="container ">
+      <div class="row g-0">
+        <div class="col-lg-6 ">
+          <img src="{{imageSrc}}" alt="" style="width: 100%;height:100%;object-fit: fill ;">
+        
+        </div>
+        <div class="col-lg-6 ">
+          <div class="col  d-flex justify-content-center">
+            
+            <div class="col-8 btn-group mb-2 mt-3 ms-auto ">
+               <a class=" btn btn-primary rounded-pill" routerLink="login" role="button"(click)="loginImage()">LogIn</a>
+              <a class="btn btn-primary rounded-pill" routerLink="signin" role="button"(click)="signinImage()">SignIn</a>
+              
+    
+            </div>
+            <button type="button" class="btn-close btn-secondary btn-floating ms-auto"  data-bs-dismiss="modal" aria-label="Close"  (click)="closeModal()"  >
+              <!-- <button type="button" class="btn-close btn-secondary btn-floating ms-auto"  data-bs-dismiss="modal" aria-label="Close"  (click)="modal.close('Close click')"  > -->
+
+            </button>
+            
+         
+          </div>
+          <div class="col bg-primary">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+
   <div class="modal-footer">
-    <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    <button type="button" class="btn btn-light" (click)="closeModal()" >Close</button>
   </div>
 </ng-template>
