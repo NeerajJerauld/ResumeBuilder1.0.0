@@ -15,7 +15,7 @@
             <input
             type="text" class="form-control" id="Name" name="userName" [(ngModel)]="user.username" (focus))="clearText()" required
             />
-            <!-- <label  style="color:red;"  name="error" [(ngModel)]="error">{{error}}></lable> -->
+            <!-- <label  style="color:red;"  name="error" [(ngModel)]="error">{{error}}</label> -->
           </div>
           <!-- <div class="col-12 ">
             <p class="h6 text-danger" id="msglbl" hidden=true></p>
@@ -38,6 +38,7 @@
               id="inputPassword" name="password" [(ngModel)]="user.password" placeholder="Min 8 character,Atleast one digit & one uppercase" required
             />
             <label id="passwordErrorlbl" style="color: red;" name="passwordErrorlbl" [(ngModel)]="passwordError">{{passwordError}}</label>
+         
           </div>
           <!-- <div class="col-12 ">
             <p class="h6 text-danger" id="passwordErr" hidden = true></p>

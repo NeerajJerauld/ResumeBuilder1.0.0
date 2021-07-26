@@ -14,7 +14,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { AuthService } from './auth.service';
 
+import { TokenInterceptorService } from './token-interceptor.service';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -33,7 +35,6 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { ViewdashboardComponent } from './viewdashboard/viewdashboard.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RegisterframeComponent } from './registerframe/registerframe.component';
 import { RouterModule } from '@angular/router';
 import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
@@ -59,7 +60,6 @@ import { InterestsComponent } from './interests/interests.component';
     HomeComponent,
     SidenavComponent,
     ViewdashboardComponent,
-    RegisterframeComponent,
     EducationComponent,
     ExperienceComponent,
     FormsComponent,
@@ -94,7 +94,12 @@ import { InterestsComponent } from './interests/interests.component';
       NgbModule,
     RouterModule
   ],
-  providers: [],
+  providers: [AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

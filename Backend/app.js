@@ -1,6 +1,9 @@
 const express = require('express');
+// =====================Delete down
 const Bookdata = require('./src/model/Bookdata');
 const Authordata = require('./src/model/Authordata');
+
+// ==================Delete above
 const Credentialdata = require('./src/model/Credentialdata');
 const Education = require('./src/model/Education');
 const Certificate = require('./src/model/Certificate');
@@ -97,14 +100,19 @@ console.log(userpassword)
 Credentialdata.findOne({username:useremail})
 .then(function(data){
   console.log(data)
-if(username == useremail && password == userpassword){
+  if(data == null){
+    res.status(403).send({message:"User doesnot exist"});
+  }
+else if(username == useremail && password == userpassword){
   console.log("You are in Admin");
   next()
 } else if (useremail==data?.username && userpassword == data?.password){
   console.log("you are in user")
   next()}else{
   res.status(401).send('Invalid Login Attempt')
-}})}    
+}})}  
+
+
 app.post('/login',checkuser, (req, res) => {
 useremail=req.body.username;
 userpassword=req.body.password;
@@ -115,7 +123,9 @@ if(useremail==username && userpassword==password){
 }else{
 let payload = {subject: userpassword+useremail}
     let token = jwt.sign(payload, 'secretKey')
-    res.status(200).send({token})}})
+    res.status(200).send({token})}
+
+})
 
 //signup
 
@@ -240,7 +250,7 @@ app.post('/signup', function (req, res) {
           console.log("--------Credential-----"+credential);
           if (credential.length != 0 || req.body.username==="admin") {
             console.log("User already exist");
-              res.send({ message: 'Username already exist...' });
+              res.status(409).send({ message: 'Username already exist...' });
           }
           else {
               var item =
@@ -258,12 +268,12 @@ app.post('/signup', function (req, res) {
               user.save()
                   .then(() => {
                       console.log("Sucessfully Saved");
-                      res.send();
+                      res.status(200).send({message:"Sucessfully Saved"});
 
                   })
                   .catch(()=>{
 
-                      res.send({message:"User already exist"});
+                    res.status(409).send({ message: 'Username already exist...' });
                   })
 
 

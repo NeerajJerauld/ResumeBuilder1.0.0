@@ -16,17 +16,21 @@ import { TemplatesComponent } from './templates/templates.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ViewResumeComponent } from './view-resume/view-resume.component';
 import { ViewWebsiteComponent } from './view-website/view-website.component';
-import { RegisterframeComponent } from './registerframe/registerframe.component';
+// import { RegisterframeComponent } from './registerframe/registerframe.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
-  {path:"dashboard",component:DashboardComponent},
+  {path:"home",component:HomeComponent},
+  {path:"dashboard",
+  canActivate:[AuthGuard],
+  component:DashboardComponent},
   {path:"login",component:LoginComponent},
   {path:"signin",component:SigninComponent},
   {path:"templates",component:TemplatesComponent},
   {path:"viewresume",component:ViewResumeComponent},
   {path:"viewwebsite",component:ViewWebsiteComponent},
-  {path:"registerframe",component:RegisterframeComponent},
+  // {path:"registerframe",component:RegisterframeComponent},
   {path:"addforms", component:FormsComponent,
   children: [
     {path:"education",component:EducationComponent},
