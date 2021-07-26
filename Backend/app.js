@@ -1,16 +1,9 @@
 const express = require('express');
-const Bookdata = require('./src/model/Bookdata');
-const Authordata = require('./src/model/Authordata');
+
 const Credentialdata = require('./src/model/Credentialdata');
-const Education = require('./src/model/Education');
-const Certificate = require('./src/model/Certificate');
-const Experience = require('./src/model/Experience');
-const Interest = require('./src/model/Interest');
-const Language = require('./src/model/Language');
-const Projects = require('./src/model/Projects');
-const Skills = require('./src/model/Skills');
-const UserDetails = require('./src/model/UserDetails');
-//const User = require('./src/model/user');
+
+const userDetails = require('./src/model/UserDetails');
+
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
 var app = new express();
@@ -43,40 +36,52 @@ function verifyToken(req, res, next) {
   }
 
 
-//     app.post('/insert',verifyToken,function(req,res){
-//     console.log(req.body);
-       
-//     var item=
+    app.post('/userinsert',function(req,res){
+    console.log(req.body);
+  
+    var item=
 
-//     {
-//              title:req.body.book.title,
-//              author:req.body.book.author,
-//              genre:req.body.book.genre,
-//              description:req.body.book.description,
-//              image:req.body.book.image
+    {
+      name:req.body.UserDetails.name, 
+  image:req.body.UserDetails.image,
+  address:  req.body.UserDetails.address, 
+  phonenumber:req.body.UserDetails.phonenumber, 
+  pincode:req.body.UserDetails.pincode,
+  city:req.body.UserDetails.city,
+  email:req.body.UserDetails.email, 
 
-//      }
+  qualification: req.body.UserDetails.Qualification,
+  institution: req.body.UserDetails.Institution,
+  coursestartdate:req.body.UserDetails.CourseStartDate, 
+  courseenddate: req.body.UserDetails.CourseEndDate,
+  yearofcompletion:req.body.UserDetails.year,
+  course: req.body.UserDetails.Course,
 
-//  var book=Bookdata(item);
-//  book.save()
-// });
-// app.get('/booklist',function(req,res){
-    
-//     Bookdata.find()
-//                 .then(function(books){
-//                     console.log(books);
-//                     res.send(books);
-//                 });
-// });
-// app.delete('/remove/:title',(req,res)=>{
+  title:req.body.UserDetails.Title,
+  companyname: req.body.UserDetails.CompanyName,
+  companyaddress: req.body.UserDetails.CompanyAddress,
+  startdate:req.body.UserDetails.StartDate,
+  enddate:req.body.UserDetails.EndDate,
+  keyresponsibilities:req.body.UserDetails.Key,
+  achivements: req.body.UserDetails.Achivements,
+  references: req.body.UserDetails.Reference,
+
+  interest: req.body.UserDetails.interest,
+  languagename:req.body.UserDetails.language,
+  proficiency: req.body.UserDetails.proficiency,
+  projectname: req.body.UserDetails.projectname,
+  projectdescription:req.body.UserDetails.image, 
+  skill: req.body.UserDetails.skills,
+  Certificatetitle:req.body.UserDetails.certificate,
+  Certificateyear: req.body.UserDetails.certificateyear,
+
+     }
    
-//     title = req.params.title;
-//     Bookdata.findOneAndDelete({"title":title})
-//     .then(()=>{
-//         console.log('success')
-//         res.send();
-//     })
-//   })
+
+ var Data=userDetails(item);
+ Data.save();
+ console.log('user data successfully uploaded')
+});
 
 
 // app.get('/bookdetails/:title',  (req, res) => {
@@ -87,35 +92,43 @@ function verifyToken(req, res, next) {
 //     });
 // })
 
-app.post('/login', (req, res) => {
-    let userData = req.body
-    
-          
-        if (userData.username===username && password === userData.password) {
-          let payload = {subject: username+password}
-          let token = jwt.sign(payload, 'secretKey')
-          res.status(200).send({token})
-         // res.status(401).send('Invalid Username')
-        } else  {
+
+function checkuser(req,res, next){
+  console.log(req.body)
+useremail=req.body.username;
+userpassword=req.body.password;
+console.log(useremail)
+console.log(userpassword)
+Credentialdata.findOne({username:useremail})
+.then(function(data){
+  console.log(data)
+if(username == useremail && password == userpassword){
+  console.log("You are in Admin");
+  next()
+} else if (useremail==data?.username && userpassword == data?.password){
+  console.log("you are in user")
+  next()}else{
+  res.status(401).send('Invalid Login Attempt')
+}})}    
+app.post('/login',checkuser, (req, res) => {
+useremail=req.body.username;
+userpassword=req.body.password;
+if(useremail==username && userpassword==password){
+    let payload = {subject: username+password}
+    let token = jwt.sign(payload, 'secretKey')
+    res.status(200).send({token})
+}else{
+let payload = {subject: userpassword+useremail}
+    let token = jwt.sign(payload, 'secretKey')
+    res.status(200).send({token})}})
+
+//signup
+
+//adding userdata in server
 
 
-          Credentialdata.find({"username":userData.username})
-          .then((user)=>{
-            if(user[0].password===userData.password)
-              res.status(200).send();//for other user
-            else{
-              res.status(401).send('Invalid Password')
-            }
-             
-          })
-          .catch(()=>{
 
-            res.status(403).send({message:"User doesnot exist"});
-        })
 
-        }
-      
-    })
 
 //     app.put('/update/:oldtitle',(req,res)=>{
 //       console.log("Hello inside put"+req.body.title +"   o"+req.params.oldtitle)

@@ -35,7 +35,18 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterframeComponent } from './registerframe/registerframe.component';
 import { RouterModule } from '@angular/router';
+import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { FormsComponent } from './forms/forms.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
+import { FormheaderComponent } from './formheader/formheader.component';
+import { OthersComponent } from './others/others.component';
+import { Form1Component } from './form1/form1.component';
+import { Form2Component } from './form2/form2.component';
+import { Form3Component } from './form3/form3.component';
+import { FormservicesService } from './formservices.service';
+import { AuthService } from './auth.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +63,16 @@ import { RouterModule } from '@angular/router';
     SidenavComponent,
     ViewdashboardComponent,
     RegisterframeComponent,
-   
+    EducationComponent,
+    ExperienceComponent,
+    FormsComponent,
+    UserDetailsComponent,
+    
+    FormheaderComponent,
+    OthersComponent,
+    Form1Component,
+    Form2Component,
+    Form3Component,
   ],
   imports: [
     BrowserModule,
@@ -78,7 +98,8 @@ import { RouterModule } from '@angular/router';
       NgbModule,
     RouterModule
   ],
-  providers: [],
+  providers: [FormservicesService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

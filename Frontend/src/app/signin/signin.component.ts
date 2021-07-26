@@ -20,7 +20,7 @@ export class SigninComponent implements OnInit {
   passwordMatch=""
   constructor(private router:Router,private auth:AuthService) { }
   verify(){
-
+    
     if(this.user.password!=this.user.repassword){
       this.passwordMatch="Password does not match";
     }

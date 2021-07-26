@@ -8,7 +8,6 @@ export class AuthService {
 
   constructor(private http:HttpClient) { }
 
-
   authenticateLogin(user:any){
 
     return this.http.post<any>("http://localhost:3000/login",user);//we are not handling result from here
@@ -19,6 +18,10 @@ export class AuthService {
     return !!localStorage.getItem("token");
 
     
+  }
+  LoggedIn()
+  {
+    return !!localStorage.getItem('token1')
   }
   getToken(){
 
