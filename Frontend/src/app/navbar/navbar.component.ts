@@ -12,8 +12,8 @@ import { RegisterimageService } from '../registerimage.service';
 })
 
 export class NavbarComponent implements OnInit {
-  
-  closeResult: string;
+
+  // closeResult: string;
   imageSrc = '';
 
   constructor(private modalService: NgbModal,private data:RegisterimageService,private router: Router,public _auth:AuthService) { }

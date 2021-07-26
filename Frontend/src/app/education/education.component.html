@@ -4,53 +4,56 @@
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div class="title">
                   {{title}}
-                </button>
+                </div>
               </h2>
-              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+
                 <div class="accordion-body">
                     <div class="col-12">
-                        <form action="">
-                            <div class="col-8">
-                                <label class="form-label" for="Qualification">Qualification </label>
-                                <input type="text" class="form-control" aria-label="Qualification">
+                        <div class="container">
+                            <div class="content">
+                              <form #educationform="ngForm">
+                                <div class="user-details">
+                                  <div class="input-box">
+                                    <span class="details">Qualification *</span>
+                                    <input type="text" name="Qualification" [(ngModel)]="educationDetails.Qualification" placeholder="Qualification" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Institution *</span>
+                                    <input type="text" name="Institute" [(ngModel)]="educationDetails.Institute" placeholder="Institution" required>
+                                  </div>
+                                 
+                                  <div class="input-box">
+                                    <span class="details">Start Date *</span>
+                                    <input type="date" name="CourseStartDate" [(ngModel)]="educationDetails.CourseStartDate" placeholder="Start Date" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">End Date / Present *</span>
+                                    <input type="text" name="CourseEndDate" [(ngModel)]="educationDetails.CourseEndDate" placeholder="End Date /Present" required >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details"> Course</span>
+                                    <input type="Course" name="Course" [(ngModel)]="educationDetails.Course" placeholder=" Course" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Year Of Complition</span>
+                                    <input type="text" name="year" [(ngModel)]="educationDetails.year" placeholder="Year" >
+                                  </div>
+                                  
+                                </div>
+                                
+                                <div class="row ">
+                                <div class="button col-md-6">
+                                  <button (click)="back()"> Back </button>
+                                </div>
+                                <div class="button col-md-6">
+                                   <input type="submit" (click)="navigate()" [disabled]="educationform.form.invalid" value="Next">
+                                  </div>
                             </div>
-                            <div class="col-8">
-                                <label class="form-label" for="Institution">Institution </label>
-                                <input type="text" class="form-control" aria-label="Institution">
+                              </form>
                             </div>
-                            <div class="col-8">
-                                <label class="form-label" for="University/Board">University/Board </label>
-                                <input type="text" class="form-control" aria-label="University/Board">
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="Present">
-                                <label class="form-check-label" for="Present">Present </label>
-                            </div>
-                            <div class="col-8">
-                                <label class="form-label" for="StartDate">StartDate </label>
-                                <input type="date" class="form-control" aria-label="StartDate">
-                            </div>
-                            <div class="col-8">
-                                <label class="form-label" for="EndDate">EndDate </label>
-                                <input type="date" class="form-control" aria-label="EndDate">
-                            </div>
-                            <div class="col-8">
-                                <label class="form-label" for="YearOfCompletion">YearOfCompletion </label>
-                                <input type="text" class="form-control" aria-label="YearOfCompletion">
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label" for="Courses">Courses </label>
-                                <input type="text" class="form-control" aria-label="Courses">
-                            </div>
-                            <br>
-                            <br>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Add </button>
-                            </div>
-                            <br>
-                        </form>  
+                          </div> 
                     </div>             
             
                 </div>
@@ -60,7 +63,7 @@
         
     
      </div>
-</div>
+
 
 
 

@@ -40,11 +40,13 @@ import { EducationComponent } from './education/education.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { FormsComponent } from './forms/forms.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { LanguageComponent } from './language/language.component';
-import { SkillsComponent } from './skills/skills.component';
-import { CertificateComponent } from './certificate/certificate.component';
-import { InterestsComponent } from './interests/interests.component';
+
+import { FormheaderComponent } from './formheader/formheader.component';
+import { OthersComponent } from './others/others.component';
+import { Form1Component } from './form1/form1.component';
+import { Form2Component } from './form2/form2.component';
+import { Form3Component } from './form3/form3.component';
+import { FormservicesService } from './formservices.service';
 
 @NgModule({
   declarations: [
@@ -64,11 +66,12 @@ import { InterestsComponent } from './interests/interests.component';
     ExperienceComponent,
     FormsComponent,
     UserDetailsComponent,
-    ProjectsComponent,
-    LanguageComponent,
-    SkillsComponent,
-    CertificateComponent,
-    InterestsComponent,
+    
+    FormheaderComponent,
+    OthersComponent,
+    Form1Component,
+    Form2Component,
+    Form3Component,
   ],
   imports: [
     BrowserModule,
@@ -99,7 +102,9 @@ import { InterestsComponent } from './interests/interests.component';
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-    }],
+    },
+    FormservicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

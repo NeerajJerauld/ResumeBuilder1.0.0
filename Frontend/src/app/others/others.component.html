@@ -13,49 +13,49 @@
                     <div class="col-12">
                         <div class="container">
                             <div class="content">
-                              <form  #experienceform="ngForm">
+                              <form #otherform="ngForm" (ngSubmit)=" navigate()">
                                 <div class="user-details">
                                   <div class="input-box">
-                                    <span class="details">Title</span>
-                                    <input type="text" name="Title" [(ngModel)]="experienceDetails.Title" placeholder="Title" >
+                                    <span class="details">Project</span>
+                                    <input type="text" name="project" [(ngModel)]="otherDetails.project"placeholder="Project">
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">Company Name</span>
-                                    <input type="text" name="CompanyName" [(ngModel)]="experienceDetails.CompanyName" placeholder="Company Name" >
+                                    <span class="details">Project Description</span>
+                                    <textarea type="text" name="description" [(ngModel)]="otherDetails.description" placeholder="Project Description" ></textarea>
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">Company Address</span>
-                                    <input type="text" name="CompanyAddress" [(ngModel)]="experienceDetails.CompanyAddress" placeholder="Company Address" >
+                                    <span class="details">Skills *</span>
+                                    <input type="text" name="skills" [(ngModel)]="otherDetails.skills" placeholder="Skills" required>
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">Key Responsibilities</span>
-                                    <input type="text" name="Key" [(ngModel)]="experienceDetails.Key" placeholder="Key Responsibilities" >
+                                    <span class="details">Interests</span>
+                                    <input type="text" name="Interest" [(ngModel)]="otherDetails.interest" placeholder="Interests" >
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">Start date</span>
-                                    <input type="date" name="StartDate" [(ngModel)]="experienceDetails.StartDate" placeholder="Startdate">
+                                    <span class="details">Certificates</span>
+                                    <input type="text" name="certificate" [(ngModel)]="otherDetails.certificate" placeholder="Certificate" >
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">End Date / Present</span>
-                                    <input type="text"  name="EndDate" [(ngModel)]="experienceDetails.EndDate" placeholder="enddate" >
+                                    <span class="details">Year</span>
+                                    <input type="text" name="certificateyear" [(ngModel)]="otherDetails.certificateyear" placeholder="Certificate Year" >
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">Achivements</span>
-                                    <input type="text" name="Achivements" [(ngModel)]="experienceDetails.Achivements" placeholder="Achivements" >
+                                    <span class="details">Language *</span>
+                                    <input type="text" name="language" [(ngModel)]="otherDetails.language" placeholder="Language" required>
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">Reference</span>
-                                    <input type="text" name="Reference" [(ngModel)]="experienceDetails.Reference" placeholder="Reference" >
+                                    <span class="details">Language Proficinery</span>
+                                    <input type="text" name="Proficinery" [(ngModel)]="otherDetails.proficinery" placeholder="proficinery" >
                                   </div>
                                 </div>
                              
                                
                                 <div class="row ">
                                 <div class="button col-md-6">
-                                  <button (click)="back()"> Back </button>
+                                   <button (click)="back()"> Back </button>
                                 </div>
                                 <div class="button col-md-6">
-                                    <input type="submit" (click)="navigate()" [disabled]="experienceform.form.invalid" value="Next">
+                                  <input type="submit" [disabled]="otherform.form.invalid" value="save">
                                   </div>
                             </div>
                               </form>
