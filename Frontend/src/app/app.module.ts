@@ -14,8 +14,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { AuthService } from './auth.service';
-
 import { TokenInterceptorService } from './token-interceptor.service';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -47,6 +45,10 @@ import { Form1Component } from './form1/form1.component';
 import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
 import { FormservicesService } from './formservices.service';
+import { AuthService } from './auth.service';
+import { Template1Component } from './template1/template1.component';
+import { Template2Component } from './template2/template2.component';
+import { Template3Component } from './template3/template3.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,9 @@ import { FormservicesService } from './formservices.service';
     Form1Component,
     Form2Component,
     Form3Component,
+    Template1Component,
+    Template2Component,
+    Template3Component,
   ],
   imports: [
     BrowserModule,
