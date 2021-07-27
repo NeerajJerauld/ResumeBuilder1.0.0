@@ -12,47 +12,249 @@
                 <div class="accordion-body">
                     <div class="col-12">
                         <div class="container">
+
                             <div class="content">
-                              <form #educationform="ngForm">
-                                <div class="user-details">
+                              <form #educationform="ngForm" [hidden]=form1 >
+                                <div class="user-details" >
+                                
                                   <div class="input-box">
-                                    <span class="details">Qualification *</span>
-                                    <input type="text" name="Qualification" [(ngModel)]="educationDetails.Qualification" placeholder="Qualification" required>
+                                    <span class="details" >Qualification *</span>
+                                    
+                                    <input type="text"  name="Qualification" [(ngModel)]="educationDetails.Qualification[0]" placeholder="Qualification" required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Institution *</span>
-                                    <input type="text" name="Institute" [(ngModel)]="educationDetails.Institute" placeholder="Institution" required>
+                                    <input type="text" name="Institute" [(ngModel)]="educationDetails.Institute[0]" placeholder="Institution" required>
                                   </div>
                                  
                                   <div class="input-box">
                                     <span class="details">Start Date *</span>
-                                    <input type="date" name="CourseStartDate" [(ngModel)]="educationDetails.CourseStartDate" placeholder="Start Date" required>
+                                    <input type="date" name="CourseStartDate" [(ngModel)]="educationDetails.CourseStartDate[0]" placeholder="Start Date" required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">End Date / Present *</span>
-                                    <input type="text" name="CourseEndDate" [(ngModel)]="educationDetails.CourseEndDate" placeholder="End Date /Present" required >
+                                    <input type="text" name="CourseEndDate" [(ngModel)]="educationDetails.CourseEndDate[0]" placeholder="End Date /Present" required >
                                   </div>
                                   <div class="input-box">
                                     <span class="details"> Course</span>
-                                    <input type="Course" name="Course" [(ngModel)]="educationDetails.Course" placeholder=" Course" >
+                                    <input type="Course" name="Course" [(ngModel)]="educationDetails.Course[0]" placeholder=" Course" >
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Year Of Complition</span>
-                                    <input type="text" name="year" [(ngModel)]="educationDetails.year" placeholder="Year" >
+                                    <input type="text" name="year" [(ngModel)]="educationDetails.year[0]" placeholder="Year" >
+                                  </div>
+                                  
+                                </div>
+                                
+                                <div class="row ">
+                                <div class="button col-md-4">
+                                  <button (click)="back()"> Back </button>
+                                </div>
+                                <div class="button col-md-4">
+                                  <button (click)="f1()"> +Add  </button>
+                                </div>
+                                <div class="button col-md-4">
+                                   <input type="submit" (click)="navigate()" [disabled]="educationform.form.invalid" value="Next">
+                                  </div>
+                                 
+                            </div>
+                              </form>
+                            </div>
+
+
+                            <div class="content">
+                              <form #educationform="ngForm" [hidden]=form2 >
+                                <div class="user-details" >
+                                
+                                  <div class="input-box">
+                                    <span class="details" >Qualification *</span>
+                                    
+                                    <input type="text"  name="Qualification" [(ngModel)]="educationDetails.Qualification[1]" placeholder="Qualification" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Institution *</span>
+                                    <input type="text" name="Institute" [(ngModel)]="educationDetails.Institute[1]" placeholder="Institution" required>
+                                  </div>
+                                 
+                                  <div class="input-box">
+                                    <span class="details">Start Date *</span>
+                                    <input type="date" name="CourseStartDate" [(ngModel)]="educationDetails.CourseStartDate[1]" placeholder="Start Date" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">End Date / Present *</span>
+                                    <input type="text" name="CourseEndDate" [(ngModel)]="educationDetails.CourseEndDate[1]" placeholder="End Date /Present" required >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details"> Course</span>
+                                    <input type="Course" name="Course" [(ngModel)]="educationDetails.Course[1]" placeholder=" Course" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Year Of Complition</span>
+                                    <input type="text" name="year" [(ngModel)]="educationDetails.year[1]" placeholder="Year" >
+                                  </div>
+                                  
+                                </div>
+                                
+                                <div class="row ">
+                                <div class="button col-md-4">
+                                  <button (click)="f0()"> Back </button>
+                                </div>
+                                <div class="button col-md-4">
+                                  <button (click)="f2()"> +Add  </button>
+                                </div>
+                                <div class="button col-md-4">
+                                   <input type="submit" (click)="navigate()" [disabled]="educationform.form.invalid" value="Next">
+                                  </div>
+                                 
+                            </div>
+                              </form>
+                            </div>
+
+                      
+                            <div class="content">
+                              <form #educationform="ngForm" [hidden]=form3 >
+                                <div class="user-details" >
+                                
+                                  <div class="input-box">
+                                    <span class="details" >Qualification *</span>
+                                    
+                                    <input type="text"  name="Qualification" [(ngModel)]="educationDetails.Qualification[2]" placeholder="Qualification" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Institution *</span>
+                                    <input type="text" name="Institute" [(ngModel)]="educationDetails.Institute[2]" placeholder="Institution" required>
+                                  </div>
+                                 
+                                  <div class="input-box">
+                                    <span class="details">Start Date *</span>
+                                    <input type="date" name="CourseStartDate" [(ngModel)]="educationDetails.CourseStartDate[2]" placeholder="Start Date" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">End Date / Present *</span>
+                                    <input type="text" name="CourseEndDate" [(ngModel)]="educationDetails.CourseEndDate[2]" placeholder="End Date /Present" required >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details"> Course</span>
+                                    <input type="Course" name="Course" [(ngModel)]="educationDetails.Course[2]" placeholder=" Course" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Year Of Complition</span>
+                                    <input type="text" name="year" [(ngModel)]="educationDetails.year[2]" placeholder="Year" >
+                                  </div>
+                                  
+                                </div>
+                                
+                                <div class="row ">
+                                <div class="button col-md-4">
+                                  <button (click)="f1()"> Back </button>
+                                </div>
+                                <div class="button col-md-4">
+                                  <button (click)="f3()"> +Add  </button>
+                                </div>
+                                <div class="button col-md-4">
+                                   <input type="submit" (click)="navigate()" [disabled]="educationform.form.invalid" value="Next">
+                                  </div>
+                                 
+                            </div>
+                              </form>
+                            </div>
+
+
+                            <div class="content">
+                              <form #educationform="ngForm" [hidden]=form4 >
+                                <div class="user-details" >
+                                
+                                  <div class="input-box">
+                                    <span class="details" >Qualification *</span>
+                                    
+                                    <input type="text"  name="Qualification" [(ngModel)]="educationDetails.Qualification[3]" placeholder="Qualification" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Institution *</span>
+                                    <input type="text" name="Institute" [(ngModel)]="educationDetails.Institute[3]" placeholder="Institution" required>
+                                  </div>
+                                 
+                                  <div class="input-box">
+                                    <span class="details">Start Date *</span>
+                                    <input type="date" name="CourseStartDate" [(ngModel)]="educationDetails.CourseStartDate[3]" placeholder="Start Date" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">End Date / Present *</span>
+                                    <input type="text" name="CourseEndDate" [(ngModel)]="educationDetails.CourseEndDate[3]" placeholder="End Date /Present" required >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details"> Course</span>
+                                    <input type="Course" name="Course" [(ngModel)]="educationDetails.Course[3]" placeholder=" Course" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Year Of Complition</span>
+                                    <input type="text" name="year" [(ngModel)]="educationDetails.year[3]" placeholder="Year" >
+                                  </div>
+                                  
+                                </div>
+                                
+                                <div class="row ">
+                                <div class="button col-md-4">
+                                  <button (click)="f2()"> Back </button>
+                                </div>
+                                <div class="button col-md-4">
+                                  <button (click)="f4()"> +Add  </button>
+                                </div>
+                                <div class="button col-md-4">
+                                   <input type="submit" (click)="navigate()" [disabled]="educationform.form.invalid" value="Next">
+                                  </div>
+                                 
+                            </div>
+                              </form>
+                            </div>
+
+                            <div class="content">
+                              <form #educationform="ngForm" [hidden]=form5 >
+                                <div class="user-details" >
+                                
+                                  <div class="input-box">
+                                    <span class="details" >Qualification *</span>
+                                    
+                                    <input type="text"  name="Qualification" [(ngModel)]="educationDetails.Qualification[4]" placeholder="Qualification" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Institution *</span>
+                                    <input type="text" name="Institute" [(ngModel)]="educationDetails.Institute[4]" placeholder="Institution" required>
+                                  </div>
+                                 
+                                  <div class="input-box">
+                                    <span class="details">Start Date *</span>
+                                    <input type="date" name="CourseStartDate" [(ngModel)]="educationDetails.CourseStartDate[4]" placeholder="Start Date" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">End Date / Present *</span>
+                                    <input type="text" name="CourseEndDate" [(ngModel)]="educationDetails.CourseEndDate[4]" placeholder="End Date /Present" required >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details"> Course</span>
+                                    <input type="Course" name="Course" [(ngModel)]="educationDetails.Course[4]" placeholder=" Course" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Year Of Complition</span>
+                                    <input type="text" name="year" [(ngModel)]="educationDetails.year[4]" placeholder="Year" >
                                   </div>
                                   
                                 </div>
                                 
                                 <div class="row ">
                                 <div class="button col-md-6">
-                                  <button (click)="back()"> Back </button>
+                                  <button (click)="f3()"> Back </button>
                                 </div>
                                 <div class="button col-md-6">
                                    <input type="submit" (click)="navigate()" [disabled]="educationform.form.invalid" value="Next">
                                   </div>
+                                 
                             </div>
                               </form>
                             </div>
+
+
+
                           </div> 
                     </div>             
             

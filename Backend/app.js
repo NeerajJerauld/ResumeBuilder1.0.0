@@ -1,24 +1,32 @@
 const express = require('express');
 const Credentialdata = require('./src/model/Credentialdata');
-// const Education = require('./src/model/Education');
-// const Certificate = require('./src/model/Certificate');
-// const Experience = require('./src/model/Experience');
-// const Interest = require('./src/model/Interest');
-// const Language = require('./src/model/Language');
-// const Projects = require('./src/model/Projects');
-// const Skills = require('./src/model/Skills');
-const UserDetails = require('./src/model/UserDetails');
+const multer=require("multer");
+const path=require("path");
+const UserData = require('./src/model/UserDetails');
 //const User = require('./src/model/user');
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
 var app = new express();
 app.use(cors());
-app.use(express.json());
+app.use(express.json({limit: '50mb'}));
 username='admin';
 password='Admin123';
 
 //const authorRouter = require('./src/routes/authorRoute');
 //app.use("/author", authorRouter);
+
+// Set Storage Engine
+const storage = multer.diskStorage({
+  destination: './public/images',
+  filename: function(req, file, cb){
+    cb(null,file.image + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+// Init Upload
+const upload = multer({
+  storage: storage
+}).single("image");
 
 
 
@@ -41,7 +49,7 @@ function verifyToken(req, res, next) {
   }
 
 
-  app.post('/userinsert',function(req,res){
+  app.post('/userinsert',upload,function(req,res){
     console.log(req.body);
   
     var item=
@@ -75,7 +83,7 @@ function verifyToken(req, res, next) {
   languagename:req.body.UserDetails.language,
   proficiency: req.body.UserDetails.proficiency,
   projectname: req.body.UserDetails.projectname,
-  projectdescription:req.body.UserDetails.image, 
+  projectdescription:req.body.UserDetails.description, 
   skill: req.body.UserDetails.skills,
   Certificatetitle:req.body.UserDetails.certificate,
   Certificateyear: req.body.UserDetails.certificateyear,
@@ -83,7 +91,7 @@ function verifyToken(req, res, next) {
      }
    
 
- var Data=userDetails(item);
+ var Data=UserData(item);
  Data.save();
  console.log('user data successfully uploaded')
 });

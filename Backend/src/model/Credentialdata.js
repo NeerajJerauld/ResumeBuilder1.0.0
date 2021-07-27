@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    'mongodb+srv://Rahulk:rahulk2308@cluster0.k8mnb.mongodb.net/Project?retryWrites=true&w=majority'
+    'mongodb://Rahulk:rahulk2308@cluster0-shard-00-00.k8mnb.mongodb.net:27017,cluster0-shard-00-01.k8mnb.mongodb.net:27017,cluster0-shard-00-02.k8mnb.mongodb.net:27017/Project?ssl=true&replicaSet=atlas-8otjwe-shard-0&authSource=admin&retryWrites=true&w=majority'
   )
   .then(() => console.log("MongoDB connected.>Credential"));
 

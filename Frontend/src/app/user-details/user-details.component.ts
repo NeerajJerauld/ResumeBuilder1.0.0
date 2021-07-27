@@ -20,6 +20,16 @@ export class UserDetailsComponent implements OnInit {
     city:'',
     pincode:''
   }
+  
+  onselectFile(e:any){
+if(e.target.files){
+  var reader=new FileReader();
+  reader.readAsDataURL(e.target.files[0])
+  reader.onload=(event:any)=>{
+    this.userDetails.image=event.target.result;
+  }
+}
+  }
 
   navigate(){
     this.router.navigate(["/form1"]);
