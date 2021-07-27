@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    'mongodb+srv://Rahulk:rahulk2308@cluster0.k8mnb.mongodb.net/Project?retryWrites=true&w=majority'
+    'mongodb://Rahulk:rahulk2308@cluster0-shard-00-00.k8mnb.mongodb.net:27017,cluster0-shard-00-01.k8mnb.mongodb.net:27017,cluster0-shard-00-02.k8mnb.mongodb.net:27017/Project?ssl=true&replicaSet=atlas-8otjwe-shard-0&authSource=admin&retryWrites=true&w=majority'
   )
   .then(() => console.log("MongoDB connected.>UserDetails"));
 
@@ -14,22 +14,22 @@ const UserDetailsSchema = new Schema({
   email:String,
   pincode:Number,
   city:String,
-  Certificatetitle: String,
+  Certificatetitle:String,
   Certificateyear: String,
-  qualification: String,
-  institution: String,
-  coursestartdate: Date,
-  courseenddate: String,
-  yearofcompletion: String,
-  course: String,
-  title: String,
-  companyname: String,
-  companyaddress: String,
-  startdate: Date,
-  enddate: String,
-  keyresponsibilities: String,
-  achivements: String,
-  references: String,
+  qualification: Array,
+  institution: Array,
+  coursestartdate: Array,
+  courseenddate: Array,
+  yearofcompletion: Array,
+  course: Array,
+  title: Array,
+  companyname: Array,
+  companyaddress: Array,
+  startdate: Array,
+  enddate: Array,
+  keyresponsibilities: Array,
+  achivements: Array,
+  references: Array,
   interest: String,
   languagename: String,
   proficiency: String,

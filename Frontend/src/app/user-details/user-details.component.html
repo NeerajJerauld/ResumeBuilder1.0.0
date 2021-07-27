@@ -17,11 +17,11 @@
                                 <div class="user-details" >
                                   <div class="input-box">
                                     <span class="details">image: </span>
-                                    <input type="file" name="userID" placeholder="UserID No:" [(ngModel)]="userDetails.image" accept="image/*" >
+                                    <input type="file" name="userID" (change)="onselectFile($event)" placeholder="UserID No:" [(ngModel)]="userDetails.image" accept="image/*" >
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">Name: </span>
-                                    <input type="text" name="name" placeholder="name" [(ngModel)]="userDetails.name" >
+                                    <span class="details">Name: * </span>
+                                    <input type="text" name="name" placeholder="name" [(ngModel)]="userDetails.name" required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Email *</span>

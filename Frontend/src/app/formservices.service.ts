@@ -25,22 +25,22 @@ export class FormservicesService {
     proficinery:''
   }
   experienceDetails= {
-    Title:'',
-    CompanyName:'',
-    CompanyAddress:'',
-    Key:'',
-    StartDate:'',
-    EndDate:'',
-    Achivements:'',
-    Reference:''
+    Title:[],
+    CompanyName:[],
+    CompanyAddress:[],
+    Key:[],
+    StartDate:[],
+    EndDate:[],
+    Achivements:[],
+    Reference:[]
   }
   educationDetails= {
-    Qualification:'',
-    Institute:'',
-    Course:'',
-    CourseStartDate:'',
-    CourseEndDate:'',
-   year:''
+    Qualification:[],
+    Institute:[],
+    Course:[],
+    CourseStartDate:[],
+    CourseEndDate:[],
+    year:[]
   }
   constructor(private http:HttpClient) { }
   setuserDetails(Details:any){
@@ -75,6 +75,8 @@ export class FormservicesService {
     return this.http.post("http://localhost:3000/userinsert",{"UserDetails":userdata})
     .subscribe(data =>{console.log(data)})
   }
-
+  getUser(email:any){
+    return this.http.get('http://localhost:3000/getuser/');
+  }
   
 }
