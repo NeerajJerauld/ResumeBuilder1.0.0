@@ -19,13 +19,20 @@ import { RegisterframeComponent } from './registerframe/registerframe.component'
 import { Form1Component } from './form1/form1.component';
 import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
+import { Template1Component } from './template1/template1.component';
+import { Template2Component } from './template2/template2.component';
+import { Template3Component } from './template3/template3.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"dashboard",component:DashboardComponent},
   {path:"login",component:LoginComponent},
   {path:"signin",component:SigninComponent},
-  {path:"templates",component:TemplatesComponent},
+  {path:"templates",component:TemplatesComponent,
+  children: [
+    {path:"template1",component:Template1Component},
+    {path:"template2",component:Template2Component},
+    {path:"template3",component:Template3Component}]},
   {path:"viewresume",component:ViewResumeComponent},
   {path:"viewwebsite",component:ViewWebsiteComponent},
   {path:"registerframe",component:RegisterframeComponent},
