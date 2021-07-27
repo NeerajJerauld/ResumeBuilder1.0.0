@@ -1,9 +1,14 @@
 const express = require('express');
-
 const Credentialdata = require('./src/model/Credentialdata');
-
-const userDetails = require('./src/model/UserDetails');
-
+// const Education = require('./src/model/Education');
+// const Certificate = require('./src/model/Certificate');
+// const Experience = require('./src/model/Experience');
+// const Interest = require('./src/model/Interest');
+// const Language = require('./src/model/Language');
+// const Projects = require('./src/model/Projects');
+// const Skills = require('./src/model/Skills');
+const UserDetails = require('./src/model/UserDetails');
+//const User = require('./src/model/user');
 const cors = require('cors');
 const jwt = require('jsonwebtoken')
 var app = new express();
@@ -36,7 +41,7 @@ function verifyToken(req, res, next) {
   }
 
 
-    app.post('/userinsert',function(req,res){
+  app.post('/userinsert',function(req,res){
     console.log(req.body);
   
     var item=
@@ -82,6 +87,40 @@ function verifyToken(req, res, next) {
  Data.save();
  console.log('user data successfully uploaded')
 });
+//     app.post('/insert',verifyToken,function(req,res){
+//     console.log(req.body);
+       
+//     var item=
+
+//     {
+//              title:req.body.book.title,
+//              author:req.body.book.author,
+//              genre:req.body.book.genre,
+//              description:req.body.book.description,
+//              image:req.body.book.image
+
+//      }
+
+//  var book=Bookdata(item);
+//  book.save()
+// });
+// app.get('/booklist',function(req,res){
+    
+//     Bookdata.find()
+//                 .then(function(books){
+//                     console.log(books);
+//                     res.send(books);
+//                 });
+// });
+// app.delete('/remove/:title',(req,res)=>{
+   
+//     title = req.params.title;
+//     Bookdata.findOneAndDelete({"title":title})
+//     .then(()=>{
+//         console.log('success')
+//         res.send();
+//     })
+//   })
 
 
 // app.get('/bookdetails/:title',  (req, res) => {
@@ -102,14 +141,19 @@ console.log(userpassword)
 Credentialdata.findOne({username:useremail})
 .then(function(data){
   console.log(data)
-if(username == useremail && password == userpassword){
+  if(data == null){
+    res.status(403).send({message:"User doesnot exist"});
+  }
+else if(username == useremail && password == userpassword){
   console.log("You are in Admin");
   next()
 } else if (useremail==data?.username && userpassword == data?.password){
   console.log("you are in user")
   next()}else{
   res.status(401).send('Invalid Login Attempt')
-}})}    
+}})}  
+
+
 app.post('/login',checkuser, (req, res) => {
 useremail=req.body.username;
 userpassword=req.body.password;
@@ -120,9 +164,55 @@ if(useremail==username && userpassword==password){
 }else{
 let payload = {subject: userpassword+useremail}
     let token = jwt.sign(payload, 'secretKey')
-    res.status(200).send({token})}})
+    res.status(200).send({token})}
 
-//signup
+})
+
+// ----------------------Credentials--------------------------------------
+app.post('/signup', function (req, res) {
+  console.log("post");
+   
+  //  console.log(credentials.has({username:req.body.userName,password:req.body.password}));
+  Credentialdata.find({"username":req.body.username})
+      .then(function (credential) {
+          console.log("--------Credential-----"+credential);
+          if (credential.length != 0 || req.body.username==="admin") {
+            console.log("User already exist");
+              res.status(409).send({ message: 'Username already exist...' });
+          }
+          else {
+              var item =
+
+              {
+                  name: req.body.fname,
+                  email: req.body.email,
+                  username: req.body.username,
+                  password: req.body.password
+
+
+              }
+
+              var user = Credentialdata(item);
+              user.save()
+                  .then(() => {
+                      console.log("Sucessfully Saved");
+                      res.status(200).send({message:"Sucessfully Saved"});
+
+                  })
+                  .catch(()=>{
+
+                    res.status(409).send({ message: 'Username already exist...' });
+                  })
+
+
+          }
+
+
+      });
+
+  
+ 
+  });
 
 //adding userdata in server
 
@@ -235,51 +325,7 @@ let payload = {subject: userpassword+useremail}
 //          res.send();
 //      });
 //    })
-// ----------------------Credentials--------------------------------------
-app.post('/signup', function (req, res) {
-  console.log("post");
-   
-  //  console.log(credentials.has({username:req.body.userName,password:req.body.password}));
-  Credentialdata.find({"username":req.body.username})
-      .then(function (credential) {
-          console.log("--------Credential-----"+credential);
-          if (credential.length != 0 || req.body.username==="admin") {
-            console.log("User already exist");
-              res.send({ message: 'Username already exist...' });
-          }
-          else {
-              var item =
 
-              {
-                  name: req.body.fname,
-                  email: req.body.email,
-                  username: req.body.username,
-                  password: req.body.password
-
-
-              }
-
-              var user = Credentialdata(item);
-              user.save()
-                  .then(() => {
-                      console.log("Sucessfully Saved");
-                      res.send();
-
-                  })
-                  .catch(()=>{
-
-                      res.send({message:"User already exist"});
-                  })
-
-
-          }
-
-
-      });
-
-  
- 
-  });
 
 
      
