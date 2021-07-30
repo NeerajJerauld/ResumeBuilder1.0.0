@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormservicesService } from '../formservices.service';
 
 @Component({
-  selector: 'app-template2',
-  templateUrl: './template2.component.html',
-  styleUrls: ['./template2.component.css']
+  selector: 'app-template5',
+  templateUrl: './template5.component.html',
+  styleUrls: ['./template5.component.css']
 })
-export class Template2Component implements OnInit {
+export class Template5Component implements OnInit {
   userDetails= [{
     name:'',
     image:'',
@@ -49,5 +49,5 @@ export class Template2Component implements OnInit {
     this.userDetails= this.FormServices.GetUser();
  
   }
-}
 
+}

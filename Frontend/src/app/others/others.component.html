@@ -13,49 +13,154 @@
                     <div class="col-12">
                         <div class="container">
                             <div class="content">
-                              <form #otherform="ngForm" (ngSubmit)=" navigate()">
+                              <form #otherform="ngForm" [hidden]=Form1 >
                                 <div class="user-details">
                                   <div class="input-box">
                                     <span class="details">Project</span>
-                                    <input type="text" name="project" [(ngModel)]="otherDetails.project"placeholder="Project">
+                                    <input type="text" name="project" [(ngModel)]="otherDetails.project[0]"placeholder="Project">
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Project Description</span>
-                                    <textarea type="text" name="description" [(ngModel)]="otherDetails.description" placeholder="Project Description" ></textarea>
+                                    <textarea type="text" name="description" [(ngModel)]="otherDetails.description[0]" placeholder="Project Description" ></textarea>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Skills *</span>
-                                    <input type="text" name="skills" [(ngModel)]="otherDetails.skills" placeholder="Skills" required>
+                                    <input type="text" name="skills" [(ngModel)]="otherDetails.skills[0]" placeholder="Skills" >
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Interests</span>
-                                    <input type="text" name="Interest" [(ngModel)]="otherDetails.interest" placeholder="Interests" >
+                                    <input type="text" name="Interest" [(ngModel)]="otherDetails.interest[0]" placeholder="Interests" >
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Certificates</span>
-                                    <input type="text" name="certificate" [(ngModel)]="otherDetails.certificate" placeholder="Certificate" >
+                                    <input type="text" name="certificate" [(ngModel)]="otherDetails.certificate[0]" placeholder="Certificate" >
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Year</span>
-                                    <input type="text" name="certificateyear" [(ngModel)]="otherDetails.certificateyear" placeholder="Certificate Year" >
+                                    <input type="text" name="certificateyear" [(ngModel)]="otherDetails.certificateyear[0]" placeholder="Certificate Year" >
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Language *</span>
-                                    <input type="text" name="language" [(ngModel)]="otherDetails.language" placeholder="Language" required>
+                                    <input type="text" name="language" [(ngModel)]="otherDetails.language[0]" placeholder="Language" >
                                   </div>
                                   <div class="input-box">
-                                    <span class="details">Language Proficinery</span>
-                                    <input type="text" name="Proficinery" [(ngModel)]="otherDetails.proficinery" placeholder="proficinery" >
+                                    <span class="details">Language proficiency</span>
+                                    <input type="text" name="proficiency" [(ngModel)]="otherDetails.proficiency[0]" placeholder="proficinery" >
+                                  </div>
+                                </div>
+                             
+                               
+                                <div class="row ">
+                                <div class="button col-md-4">
+                                   <button (click)="back()"> Back </button>
+                                </div>
+                                <div class="button col-md-4">
+                                  <button (click)="f1()"> +Add </button>
+                               </div>
+                                <div class="button col-md-4">
+                                  <input type="submit" [disabled]="otherform.form.invalid" (click)="navigate()" value="save">
+                                  </div>
+                            </div>
+                              </form>
+                            </div>
+
+                            <div class="content">
+                              <form #otherform="ngForm" [hidden]=Form2 >
+                                <div class="user-details">
+                                  <div class="input-box">
+                                    <span class="details">Project</span>
+                                    <input type="text" name="project" [(ngModel)]="otherDetails.project[1]"placeholder="Project">
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Project Description</span>
+                                    <textarea type="text" name="description" [(ngModel)]="otherDetails.description[1]" placeholder="Project Description" ></textarea>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Skills </span>
+                                    <input type="text" name="skills" [(ngModel)]="otherDetails.skills[1]" placeholder="Skills">
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Interests</span>
+                                    <input type="text" name="Interest" [(ngModel)]="otherDetails.interest[1]" placeholder="Interests" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Certificates</span>
+                                    <input type="text" name="certificate" [(ngModel)]="otherDetails.certificate[1]" placeholder="Certificate" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Year</span>
+                                    <input type="text" name="certificateyear" [(ngModel)]="otherDetails.certificateyear[1]" placeholder="Certificate Year" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Language </span>
+                                    <input type="text" name="language" [(ngModel)]="otherDetails.language[1]" placeholder="Language" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Language proficiency</span>
+                                    <input type="text" name="proficiency" [(ngModel)]="otherDetails.proficiency[1]" placeholder="proficinery" >
+                                  </div>
+                                </div>
+                             
+                               
+                                <div class="row ">
+                                <div class="button col-md-4">
+                                   <button (click)="f0()"> Back </button>
+                                </div>
+                                <div class="button col-md-4">
+                                  <button (click)="f2()"> +Add </button>
+                               </div>
+                                <div class="button col-md-4">
+                                  <input type="submit" [disabled]="otherform.form.invalid" (click)="navigate()" value="save">
+                                  </div>
+                            </div>
+                              </form>
+                            </div>
+
+                            <div class="content">
+                              <form #otherform="ngForm" [hidden]=Form3 >
+                                <div class="user-details">
+                                  <div class="input-box">
+                                    <span class="details">Project</span>
+                                    <input type="text" name="project" [(ngModel)]="otherDetails.project[2]"placeholder="Project">
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Project Description</span>
+                                    <textarea type="text" name="description" [(ngModel)]="otherDetails.description[2]" placeholder="Project Description" ></textarea>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Skills </span>
+                                    <input type="text" name="skills" [(ngModel)]="otherDetails.skills[2]" placeholder="Skills" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Interests</span>
+                                    <input type="text" name="Interest" [(ngModel)]="otherDetails.interest[2]" placeholder="Interests" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Certificates</span>
+                                    <input type="text" name="certificate" [(ngModel)]="otherDetails.certificate[2]" placeholder="Certificate" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Year</span>
+                                    <input type="text" name="certificateyear" [(ngModel)]="otherDetails.certificateyear[2]" placeholder="Certificate Year" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Language </span>
+                                    <input type="text" name="language" [(ngModel)]="otherDetails.language[2]" placeholder="Language" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Language Proficiency</span>
+                                    <input type="text" name="Proficiency" [(ngModel)]="otherDetails.proficiency[2]" placeholder="proficinery" >
                                   </div>
                                 </div>
                              
                                
                                 <div class="row ">
                                 <div class="button col-md-6">
-                                   <button (click)="back()"> Back </button>
+                                   <button (click)="f1()"> Back </button>
                                 </div>
+                        
                                 <div class="button col-md-6">
-                                  <input type="submit" [disabled]="otherform.form.invalid" value="save">
+                                  <input type="submit" [disabled]="otherform.form.invalid" (click)="navigate()" value="save">
                                   </div>
                             </div>
                               </form>

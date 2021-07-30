@@ -10,15 +10,35 @@ import { FormservicesService } from '../formservices.service';
 export class OthersComponent implements OnInit {
   title = 'Others';
   otherDetails= {
-    project:'',
-    description:'',
-    skills:'',
-    interest:'',
-    certificate:'',
-    certificateyear:'',
-    language:'',
-    proficinery:''
+    project:[''],
+    description:[''],
+    skills:[''],
+    interest:[''],
+    certificate:[''],
+    certificateyear:[''],
+    language:[''],
+    proficiency:['']
   }
+
+  Form1=false;
+Form2=true;
+Form3=true;
+
+f0(){
+  this.Form1=false;
+  this.Form2=true;
+  this.Form3=true;
+}
+f1(){
+  this.Form1=true;
+  this.Form2=false;
+  this.Form3=true;
+}
+f2(){
+  this.Form1=true;
+  this.Form2=true;
+  this.Form3=false;
+}
   
   constructor(private router:Router, private FormServices:FormservicesService) { }
  navigate(){
@@ -26,7 +46,8 @@ export class OthersComponent implements OnInit {
   this.FormServices.newUser();
   console.log("Called");    
   alert("Success");
-    this.router.navigate(["/"]);
+    this.router.navigate(["/templates"]);
+    this.FormServices.getUser()
   }
   back(){
     this.router.navigate(["/form2"]); 

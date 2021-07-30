@@ -49,6 +49,8 @@ import { AuthService } from './auth.service';
 import { Template1Component } from './template1/template1.component';
 import { Template2Component } from './template2/template2.component';
 import { Template3Component } from './template3/template3.component';
+import { Template4Component } from './template4/template4.component';
+import { Template5Component } from './template5/template5.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +79,8 @@ import { Template3Component } from './template3/template3.component';
     Template1Component,
     Template2Component,
     Template3Component,
+    Template4Component,
+    Template5Component,
   ],
   imports: [
     BrowserModule,

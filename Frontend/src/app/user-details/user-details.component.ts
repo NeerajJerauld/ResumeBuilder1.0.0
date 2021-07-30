@@ -18,7 +18,8 @@ export class UserDetailsComponent implements OnInit {
     phoneNumber:'',
     address:'',
     city:'',
-    pincode:''
+    pincode:'',
+    summary:''
   }
   
   onselectFile(e:any){
