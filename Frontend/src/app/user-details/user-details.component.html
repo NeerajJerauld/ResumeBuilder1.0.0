@@ -24,6 +24,10 @@
                                     <input type="text" name="name" placeholder="name" [(ngModel)]="userDetails.name" required>
                                   </div>
                                   <div class="input-box">
+                                    <span class="details">Summary:  </span>
+                                   <textarea name="summary" [ngModel]="userDetails.summary"></textarea>
+                                  </div>
+                                  <div class="input-box">
                                     <span class="details">Email *</span>
                                     <input type="text" name="email" placeholder="Enter your email"[(ngModel)]="userDetails.email"  pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required>
                                   </div>

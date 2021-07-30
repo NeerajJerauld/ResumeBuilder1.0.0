@@ -8,6 +8,7 @@ export class FormservicesService {
   userDetails= {
     name:'',
     image:'',
+    summary:'',
     email:'',
     phoneNumber:'',
     address:'',
@@ -15,14 +16,14 @@ export class FormservicesService {
     pincode:''
   }
  otherDetails= {
-    project:'',
-    description:'',
-    skills:'',
-    interest:'',
-    certificate:'',
-    certificateyear:'',
-    language:'',
-    proficinery:''
+    project:[],
+    description:[],
+    skills:[],
+    interest:[],
+    certificate:[],
+    certificateyear:[],
+    language:[],
+    proficiency:[]
   }
   experienceDetails= {
     Title:[],
@@ -42,6 +43,8 @@ export class FormservicesService {
     CourseEndDate:[],
     year:[]
   }
+
+
   constructor(private http:HttpClient) { }
   setuserDetails(Details:any){
     this.userDetails=Details; 
@@ -75,8 +78,53 @@ export class FormservicesService {
     return this.http.post("http://localhost:3000/userinsert",{"UserDetails":userdata})
     .subscribe(data =>{console.log(data)})
   }
-  getUser(email:any){
-    return this.http.get('http://localhost:3000/getuser/');
-  }
+
+  UserDetails= [{
+    name:'',
+    image:'',
+    summary:'',
+    email:'',
+    phonenumber:'',
+    address:'',
+    city:'',
+    pincode:'',
+ 
+    projectname:[''],
+    projectdescription:[''],
+    skill:[''],
+    interest:[''],
+    Certificatetitle:[''],
+    Certificateyear:[''],
+    languagename:[''],
+    proficinery:[''],
   
+    title:[''],
+    companyname:[''],
+    companyaddress:[''],
+    keyresponsibilities:[''],
+    startdate:[''],
+    enddate:[''],
+    achivements:[''],
+    references:[''],
+
+    qualification:[''],
+    institution:[''],
+    Course:[''],
+    coursestartdate:[''],
+    courseenddate:[''],
+    year:['']
+  }]
+
+  getUser(){
+     this.http.get('http://localhost:3000/getuser/'+this.userDetails.email).subscribe((data)=>{
+      this.UserDetails=JSON.parse(JSON.stringify(data));
+      console.log(this.UserDetails);
+     })
+    }
+
+    GetUser(){
+      return this.UserDetails;
+    }
 }
+
+

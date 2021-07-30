@@ -22,6 +22,8 @@ import { Form3Component } from './form3/form3.component';
 import { Template1Component } from './template1/template1.component';
 import { Template2Component } from './template2/template2.component';
 import { Template3Component } from './template3/template3.component';
+import { Template4Component } from './template4/template4.component';
+import { Template5Component } from './template5/template5.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -31,11 +33,13 @@ const routes: Routes = [
   component:DashboardComponent},
   {path:"login",component:LoginComponent},
   {path:"signin",component:SigninComponent},
-  {path:"templates",component:TemplatesComponent,
-  children: [
+  {path:"templates",component:TemplatesComponent},
+ 
     {path:"template1",component:Template1Component},
     {path:"template2",component:Template2Component},
-    {path:"template3",component:Template3Component}]},
+    {path:"template3",component:Template3Component},
+    {path:"template4",component:Template4Component},
+    {path:"template5",component:Template5Component},
   {path:"viewresume",component:ViewResumeComponent},
   {path:"viewwebsite",component:ViewWebsiteComponent},
   // {path:"addforms", component:FormsComponent,

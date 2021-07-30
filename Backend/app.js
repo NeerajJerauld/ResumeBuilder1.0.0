@@ -55,21 +55,22 @@ function verifyToken(req, res, next) {
     var item=
 
     {
-      name:req.body.UserDetails.name, 
+  name:req.body.UserDetails.name, 
   image:req.body.UserDetails.image,
+  summary:req.body.UserDetails.summary,
   address:  req.body.UserDetails.address, 
-  phonenumber:req.body.UserDetails.phonenumber, 
+  phonenumber:req.body.UserDetails.phoneNumber, 
   pincode:req.body.UserDetails.pincode,
   city:req.body.UserDetails.city,
   email:req.body.UserDetails.email, 
 
   qualification: req.body.UserDetails.Qualification,
-  institution: req.body.UserDetails.Institution,
+  institution: req.body.UserDetails.Institute,
   coursestartdate:req.body.UserDetails.CourseStartDate, 
   courseenddate: req.body.UserDetails.CourseEndDate,
   yearofcompletion:req.body.UserDetails.year,
   course: req.body.UserDetails.Course,
-
+ 
   title:req.body.UserDetails.Title,
   companyname: req.body.UserDetails.CompanyName,
   companyaddress: req.body.UserDetails.CompanyAddress,
@@ -82,7 +83,7 @@ function verifyToken(req, res, next) {
   interest: req.body.UserDetails.interest,
   languagename:req.body.UserDetails.language,
   proficiency: req.body.UserDetails.proficiency,
-  projectname: req.body.UserDetails.projectname,
+  projectname: req.body.UserDetails.project,
   projectdescription:req.body.UserDetails.description, 
   skill: req.body.UserDetails.skills,
   Certificatetitle:req.body.UserDetails.certificate,
@@ -95,31 +96,7 @@ function verifyToken(req, res, next) {
  Data.save();
  console.log('user data successfully uploaded')
 });
-//     app.post('/insert',verifyToken,function(req,res){
-//     console.log(req.body);
-       
-//     var item=
 
-//     {
-//              title:req.body.book.title,
-//              author:req.body.book.author,
-//              genre:req.body.book.genre,
-//              description:req.body.book.description,
-//              image:req.body.book.image
-
-//      }
-
-//  var book=Bookdata(item);
-//  book.save()
-// });
-// app.get('/booklist',function(req,res){
-    
-//     Bookdata.find()
-//                 .then(function(books){
-//                     console.log(books);
-//                     res.send(books);
-//                 });
-// });
 // app.delete('/remove/:title',(req,res)=>{
    
 //     title = req.params.title;
@@ -131,13 +108,15 @@ function verifyToken(req, res, next) {
 //   })
 
 
-// app.get('/bookdetails/:title',  (req, res) => {
-//     const title = req.params.title;
-//     Bookdata.findOne({"title":title})
-//     .then((book)=>{
-//         res.send(book);
-//     });
-// })
+app.get('/getuser/:email',  (req, res) => {
+    const email = req.params.email;
+    UserData.find({"email":email}).sort({$natural:-1}).limit(1)
+    .then((Data)=>{
+      console.log(Data);
+        res.send(Data);
+    });
+
+})
 
 
 function checkuser(req,res, next){
@@ -180,7 +159,7 @@ let payload = {subject: userpassword+useremail}
 app.post('/signup', function (req, res) {
   console.log("post");
    
-  //  console.log(credentials.has({username:req.body.userName,password:req.body.password}));
+  
   Credentialdata.find({"username":req.body.username})
       .then(function (credential) {
           console.log("--------Credential-----"+credential);

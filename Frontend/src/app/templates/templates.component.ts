@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FormservicesService } from '../formservices.service';
 @Component({
   selector: 'app-templates',
   templateUrl: './templates.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplatesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public FormService:FormservicesService) { }
 
   ngOnInit(): void {
   }
+ user(){
+this.FormService.getUser()
+ }
 
 }
