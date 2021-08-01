@@ -1,5 +1,5 @@
-
-<div class="resume_wrapper" *ngFor="let  UserDetails of userDetails">
+<div class="main" *ngFor="let  UserDetails of userDetails">
+<div class="resume_wrapper" >
 	<div class="resume_left">
 		<div class="resume_image">
 			<img src={{UserDetails.image}} alt="Resume_image">
@@ -210,10 +210,12 @@
 				</div> -->
 			</div>
 		</div>
+		
 	</div>
+	
 </div>
-
 <div class="row">
-    <button class="col-md-2">Download</button>
-    <button class="col-md-2">Edit</button>
+	<button class="col-md-2">Download</button>
+	<button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>
+</div>
 </div>

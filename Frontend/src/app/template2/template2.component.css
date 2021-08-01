@@ -143,3 +143,10 @@ main #first-section {
 	letter-spacing: .5px;
 	line-height: 1.6;
 }
+
+button{
+    width: 100px;
+    height: 40px;
+    margin: 20px;
+    align-items: center;
+}

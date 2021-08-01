@@ -38,13 +38,26 @@
             >
           </button>
         </li>
-        <li class="nav-item">
-          <button class="btn btn-sm btn-outline-success me-2" type="button">
+        <li class="nav-item" *ngIf="_auth.loggedIn() === false">
+          <button class="btn btn-sm btn-outline-success me-2" type="button" >
             <a
               class="nav-link active"
               aria-current="page"
               routerLink="templates"
+              
               >Templates</a
+            >
+          </button>
+        </li>
+
+        <li class="nav-item" *ngIf="_auth.loggedIn() === true">
+          <button class="btn btn-sm btn-outline-success me-2" type="button" >
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="addforms"
+              
+              >Create</a
             >
           </button>
         </li>
@@ -77,9 +90,12 @@
           </button>
         </li>
 
-        <li class="nav-item">
+        
+
+        <li class="nav-item" *ngIf="_auth.loggedIn() === true">
           <button class="btn btn-sm btn-outline-success me-2" type="button">
             <a class="nav-link active" aria-current="page" (click)="logOut()"
+            
               >Logout</a
             >
           </button>

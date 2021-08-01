@@ -24,6 +24,7 @@ import { Template2Component } from './template2/template2.component';
 import { Template3Component } from './template3/template3.component';
 import { Template4Component } from './template4/template4.component';
 import { Template5Component } from './template5/template5.component';
+import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -42,23 +43,14 @@ const routes: Routes = [
     {path:"template5",component:Template5Component},
   {path:"viewresume",component:ViewResumeComponent},
   {path:"viewwebsite",component:ViewWebsiteComponent},
-  // {path:"addforms", component:FormsComponent,
-  // children: [
-  //   {path:"education",component:EducationComponent},
-  //   {path:"experience", component:ExperienceComponent},
-  //   {path:"skills", component:SkillsComponent},
-  //   {path:"interests",component:InterestsComponent},
-  //   {path:"language",component:LanguageComponent},
-  //   {path:"projects",component:ProjectsComponent},
-  //   {path:"userDetails",component:UserDetailsComponent},
-  //   {path:"certificate",component:CertificateComponent}  
-  // ]}
+
   {path:"addforms", component:FormsComponent},
   
     {path:"form1",component:Form1Component},
     {path:"form2", component:Form2Component},
    
     {path:"form3",component:Form3Component},
+    {path:"edit",component:UpdatedetailsComponent}
   
  
   

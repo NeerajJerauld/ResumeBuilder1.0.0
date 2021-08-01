@@ -5,35 +5,35 @@
         <img src="../../assets/images/template1.png">
         <div class="info">
             <h1>Template1</h1>
-            <a routerLink="/template1"  class="btn">Select</a>
+            <a routerLink="/template1" *ngIf="auth.loggedIn() === true"  class="btn">Select</a>
         </div>
     </div>
     <div class="card">
         <img src="../../assets/images/template2 (2).png">
         <div class="info">
             <h1>Template2</h1>
-            <a routerLink="/template2"  class="btn">Select</a>
+            <a routerLink="/template2" *ngIf="auth.loggedIn() === true" class="btn">Select</a>
         </div>
     </div>
     <div class="card">
         <img src="../../assets/images/template3.png">
         <div class="info">
             <h1>Template3</h1>
-            <a routerLink="/template3"  class="btn">Select</a>
+            <a routerLink="/template3" *ngIf="auth.loggedIn() === true" class="btn">Select</a>
         </div>
     </div>
 <div class="card">
         <img src="../../assets/images/template4.png">
         <div class="info">
             <h1>Template4</h1>
-            <a routerLink="/template4"  class="btn">Select</a>
+            <a routerLink="/template4" *ngIf="auth.loggedIn() === true" class="btn">Select</a>
         </div>
     </div>
     <div class="card">
         <img src="../../assets/images/template5.png">
         <div class="info">
             <h1>Template5</h1>
-            <a routerLink="/template5"  class="btn">Select</a>
+            <a routerLink="/template5" *ngIf="auth.loggedIn() === true"  class="btn">Select</a>
         </div>
     </div>
     
