@@ -1,6 +1,6 @@
 <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-
-<div class="container" *ngFor="let UserDetails of userDetails; ">
+<div class="main" *ngFor="let UserDetails of userDetails">
+<div class="container" >
   <div class="header">
     <div class="full-name">
       <span class="first-name">{{UserDetails.name}}</span> 
@@ -154,8 +154,18 @@
      </div>
      </div>
   </div>
+            </div>
+</div>
+        </div>
+        </div>
+        </div>
+        </div>
 
+        </div>
+        </div>
+        </div>
   <div class="row">
     <button class="col-md-2">Download</button>
-    <button class="col-md-2">Edit</button>
+    <button class="col-md-2"(click)="edituser(UserDetails)">Edit</button>
+</div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormservicesService } from '../formservices.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-template4',
@@ -24,7 +25,7 @@ export class Template4Component implements OnInit {
     Certificatetitle:[''],
     Certificateyear:[''],
     languagename:[''],
-    proficinery:[''],
+    proficiency:[''],
   
     title:[''],
     companyname:[''],
@@ -42,11 +43,19 @@ export class Template4Component implements OnInit {
     courseenddate:[''],
     year:['']
   }]
-  constructor(public FormServices:FormservicesService) { }
+  constructor(public FormServices:FormservicesService,private router:Router) { }
 
   ngOnInit(): void {
     this.userDetails= this.FormServices.GetUser();
  
+  }
+
+  edituser(user:any)
+  {
+    localStorage.setItem("userId", user._id.toString());
+
+    this.router.navigate(['edit']);
+
   }
 
 }

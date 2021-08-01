@@ -118,6 +118,16 @@ app.get('/getuser/:email',  (req, res) => {
 
 })
 
+// app.get('/user/:id',  (req, res) => {
+//   const id = req.params.id;
+//   UserData.find({"_id":id})
+//   .then((Data)=>{
+//     console.log(Data);
+//       res.send(Data);
+//   });
+
+// })
+
 
 function checkuser(req,res, next){
   console.log(req.body)
@@ -205,22 +215,88 @@ app.post('/signup', function (req, res) {
 
 
 
+app.put('/update',(req,res)=>{
+  console.log(req.body)
 
+ id=req.body.user;
+ console.log(id)
+ Name=req.body.name, 
+  image=req.body.image,
+  summary=req.body.summary,
+  address=  req.body.address, 
+  phonenumber=req.body.phoneNumber, 
+  pincode=req.body.pincode,
+  city=req.body.city,
+  email=req.body.email, 
 
-//     app.put('/update/:oldtitle',(req,res)=>{
-//       console.log("Hello inside put"+req.body.title +"   o"+req.params.oldtitle)
-//       const update = {
-//       title:req.body.title,
-//       author:req.body.author,
-//       genre:req.body.genre,
-//       description:req.body.description,
-//       image:req.body.image
-//       };
-//      Bookdata.findOneAndUpdate({"title":req.params.oldtitle},update)
-//      .then(function(){
-//         res.send();
-//     });
-//     });    
+  qualification= req.body.Qualification,
+  institution= req.body.Institute,
+  coursestartdate=req.body.CourseStartDate, 
+  courseenddate= req.body.CourseEndDate,
+  yearofcompletion=req.body.year,
+  course= req.body.Course,
+ 
+  title=req.body.Title,
+  companyname= req.body.CompanyName,
+  companyaddress= req.body.CompanyAddress,
+  startdate=req.body.StartDate,
+  enddate=req.body.EndDate,
+  keyresponsibilities=req.body.Key,
+  achivements= req.body.Achivements,
+  references= req.body.Reference,
+
+  interest= req.body.interest,
+  languagename=req.body.language,
+  proficiency= req.body.proficiency,
+  projectname= req.body.project,
+  projectdescription=req.body.description, 
+  skill= req.body.skills,
+  Certificatetitle=req.body.certificate,
+  Certificateyear= req.body.certificateyear;
+
+ 
+ UserData.findByIdAndUpdate({"_id":id},
+                              {$set:{
+                               "name":Name, 
+                                "image":image,
+                                "summary":summary,
+                                "address":address, 
+                                "phonenumber":phonenumber, 
+                                "pincode":pincode,
+                                "city":city,
+                                "email":email, 
+                              
+                                "qualification": qualification,
+                                "institution": institution,
+                                "coursestartdate":coursestartdate, 
+                                "courseenddate": courseenddate,
+                               " yearofcompletion":yearofcompletion,
+                                "course": course,
+                               
+                                "title":title,
+                                "companyname":companyname,
+                                "companyaddress": companyaddress,
+                                "startdate":startdate,
+                                "enddate":enddate,
+                                "keyresponsibilities":keyresponsibilities,
+                                "achivements": achivements,
+                                "references": references,
+                              
+                                "interest": interest,
+                                "languagename":languagename,
+                                "proficiency": proficiency,
+                                "projectname": projectname,
+                                "projectdescription":projectdescription, 
+                                "skill": skill,
+                                "Certificatetitle":Certificatetitle,
+                                "Certificateyear": Certificateyear,
+                              
+                            }})
+ .then(function(){
+     res.send();
+ })
+})
+
  
     
       

@@ -191,3 +191,10 @@
     width: 20px;
     margin-right: 2px;
 }
+
+button{
+    width: 100px;
+    height: 40px;
+    margin: 20px;
+    align-items: center;
+}

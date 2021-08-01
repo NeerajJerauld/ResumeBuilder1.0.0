@@ -1,4 +1,5 @@
-<div class="container" *ngFor="let UserDetails of userDetails">
+<div class="main" *ngFor="let UserDetails of userDetails">
+<div class="container" >
     <header id="header">
       <div id="profile-pic">
         <img src={{UserDetails.image}} alt="profile pic" /> 
@@ -136,9 +137,10 @@
 
     </aside>
     <div class="clr"></div>
+  
   </div>
-
   <div class="row">
     <button class="col-md-2">Download</button>
-    <button class="col-md-2">Edit</button>
+    <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>
+</div>
 </div>

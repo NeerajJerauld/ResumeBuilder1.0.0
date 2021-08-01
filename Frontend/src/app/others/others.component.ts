@@ -46,8 +46,9 @@ f2(){
   this.FormServices.newUser();
   console.log("Called");    
   alert("Success");
+  this.FormServices.getUser();
     this.router.navigate(["/templates"]);
-    this.FormServices.getUser()
+   
   }
   back(){
     this.router.navigate(["/form2"]); 
