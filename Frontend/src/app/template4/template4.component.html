@@ -1,3 +1,6 @@
+<div >
+<div id = "Content">
+
 <div class="container" *ngFor="let UserDetails of userDetails">
     <header id="header">
       <div id="profile-pic">
@@ -138,7 +141,10 @@
     <div class="clr"></div>
   </div>
 
-  <div class="row">
-    <button class="col-md-2">Download</button>
-    <button class="col-md-2">Edit</button>
+</div>
+</div>
+
+<div>
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+    <button class="col-md-2">Edit</button>	
 </div>

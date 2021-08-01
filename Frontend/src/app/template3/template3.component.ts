@@ -43,8 +43,7 @@ export class Template3Component implements OnInit {
     year:['']
   }]
   constructor(public FormServices:FormservicesService) { }
-
-  ngOnInit(): void {
+    ngOnInit(): void {
     this.userDetails= this.FormServices.GetUser();
   
 }

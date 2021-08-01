@@ -1,3 +1,6 @@
+<div >
+<div id = "Content">
+
 <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 
 <div class="container" *ngFor="let UserDetails of userDetails; ">
@@ -155,7 +158,10 @@
      </div>
   </div>
 
-  <div class="row">
-    <button class="col-md-2">Download</button>
-    <button class="col-md-2">Edit</button>
+</div>
+</div>
+
+<div>
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+    <button class="col-md-2">Edit</button>	
 </div>

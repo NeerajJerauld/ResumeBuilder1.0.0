@@ -1,3 +1,7 @@
+<div >
+<div id = "Content">
+
+
 <div class="container" *ngFor="let UserDetails of userDetails">
     <aside>
         <img class="personal-img" alt="personal image" src={{UserDetails.image}}>
@@ -123,7 +127,10 @@
     </main>
 </div>
 
-<div class="row">
-    <button class="col-md-2">Download</button>
-    <button class="col-md-2">Edit</button>
+</div>
+</div>
+
+<div>
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+    <button class="col-md-2">Edit</button>	
 </div>
