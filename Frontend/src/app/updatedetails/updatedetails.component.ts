@@ -20,32 +20,32 @@ export class UpdatedetailsComponent implements OnInit {
     summary:''
   }
   otherDetails:any= {
-    project:[],
-    description:[],
-    skills:[],
-    interest:[],
-    certificate:[],
-    certificateyear:[],
-    language:[],
-    proficiency:[]
+    project:[''],
+    description:[''],
+    skills:[''],
+    interest:[''],
+    certificate:[''],
+    certificateyear:[''],
+    language:[''],
+    proficiency:['']
   }
   experienceDetails:any= {
-    Title:[],
-    CompanyName:[],
-    CompanyAddress:[],
-    Key:[],
-    StartDate:[],
-    EndDate:[],
-    Achivements:[],
-    Reference:[]
+    Title:[''],
+    CompanyName:[''],
+    CompanyAddress:[''],
+    Key:[''],
+    StartDate:[''],
+    EndDate:[''],
+    Achivements:[''],
+    Reference:['']
   }
   educationDetails:any= {
-    Qualification:[],
-    Institute:[],
-    Course:[],
-    CourseStartDate:[],
-    CourseEndDate:[],
-    year:[]
+    Qualification:[''],
+    Institute:[''],
+    Course:[''],
+    CourseStartDate:[''],
+    CourseEndDate:[''],
+    year:['']
   }
   Id:any={
     user:''
