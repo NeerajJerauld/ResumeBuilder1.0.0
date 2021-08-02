@@ -53,6 +53,7 @@ import { Template4Component } from './template4/template4.component';
 import { Template5Component } from './template5/template5.component';
 import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
