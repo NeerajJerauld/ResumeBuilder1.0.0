@@ -1,5 +1,5 @@
 <ngx-spinner  type="ball-spin-clockwise" ></ngx-spinner>
-<div >
+<div *ngFor="let UserDetails of userDetails">
 <div id = "Content">
 <div class="main" *ngFor="let  UserDetails of userDetails">
 <div class="resume_wrapper" >
@@ -240,12 +240,12 @@
 </div>
 
 </div>
-</div>
 
-<div  *ngFor="let UserDetails of userDetails">
+
+<div  >
 	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
     <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>	
 </div>
 
-
+</div>
 
