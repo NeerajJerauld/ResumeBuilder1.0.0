@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "@types/jspdf": "^2.0.0",
     "angular": "^1.8.2",
     "angular-material": "^1.2.3",
     "bootstrap": "^5.0.2",
@@ -32,7 +33,11 @@
     "material": "^0.4.3",
     "multer": "^1.4.2",
     "ng2-pdf-viewer": "^7.0.1",
+<<<<<<< HEAD
     "ngx-spinner": "^12.0.0",
+=======
+    "ngx-print": "^1.2.1",
+>>>>>>> 0974e846e5c7659877b83d51dff85427deef10de
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

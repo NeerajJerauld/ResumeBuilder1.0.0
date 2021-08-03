@@ -51,6 +51,7 @@ import { Template2Component } from './template2/template2.component';
 import { Template3Component } from './template3/template3.component';
 import { Template4Component } from './template4/template4.component';
 import { Template5Component } from './template5/template5.component';
+import { NgxPrintModule } from 'ngx-print';
 import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
 
 import { NgxSpinnerModule } from "ngx-spinner";
@@ -90,6 +91,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgxPrintModule,
     HttpClientModule,
     ReactiveFormsModule,
     NgxSpinnerModule,

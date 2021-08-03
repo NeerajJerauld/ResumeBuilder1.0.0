@@ -1,4 +1,7 @@
 <ngx-spinner  type="ball-spin-clockwise" ></ngx-spinner>
+<div >
+<div id = "Content">
+
 <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
 <div class="main" *ngFor="let UserDetails of userDetails">
 <div class="container" >
@@ -162,11 +165,10 @@
         </div>
         </div>
 
-        </div>
-        </div>
-        </div>
-  <div class="row">
-    <button class="col-md-2">Download</button>
-    <button class="col-md-2"(click)="edituser(UserDetails)">Edit</button>
 </div>
+</div>
+
+<div>
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+    <button class="col-md-2"(click)="edituser(UserDetails)">Edit</button>	
 </div>

@@ -1,4 +1,8 @@
 <ngx-spinner  type="ball-spin-clockwise" ></ngx-spinner>
+
+<div >
+<div id = "Content">
+
 <div class="main" *ngFor="let UserDetails of userDetails">
 <div class="container" >
     <div class="left-side">
@@ -203,8 +207,12 @@
     </div>
 </div>
 </div>
-<div class="row">
-    <button >Download</button>
-    <button (click)="edituser(UserDetails)">Edit</button>
 </div>
 </div>
+</div>
+
+<div>
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+    <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>	
+</div>
+
