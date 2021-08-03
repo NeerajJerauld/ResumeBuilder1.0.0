@@ -21,7 +21,7 @@
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Name: * </span>
-                                    <input type="text" name="name" placeholder="name" [(ngModel)]="userDetails.name" required>
+                                    <input type="text" name="name" placeholder="name" [(ngModel)]="userDetails.name" pattern="^[a-zA-Z0-9_-. ' ']{1,15}$" required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Summary:  </span>
@@ -29,23 +29,24 @@
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Email *</span>
-                                    <input type="text" name="email" placeholder="Enter your email"[(ngModel)]="userDetails.email"  pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required>
+                                    <input type="text" name="email" placeholder="Enter your email"[(ngModel)]="userDetails.email" pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required>
                                   </div>
+                               
                                   <div class="input-box">
                                     <span class="details">Phone Number *</span>
-                                    <input type="text" name="phoneNumber" placeholder="Enter your number"[(ngModel)]="userDetails.phoneNumber" required>
+                                    <input type="text" name="phoneNumber" placeholder="Enter your number"[(ngModel)]="userDetails.phoneNumber" pattern="^[0-9+]{1,11}$" required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Address *</span>
-                                    <input type="textarea" name="address" placeholder="Address"[(ngModel)]="userDetails.address" required>
+                                    <input type="textarea" name="address" placeholder="Address"[(ngModel)]="userDetails.address"  required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">City *</span>
-                                    <input type="text" name="city"placeholder="City" [(ngModel)]="userDetails.city"required>
+                                    <input type="text" name="city"placeholder="City" [(ngModel)]="userDetails.city"   required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Pincode *</span>
-                                    <input type="text" name="pincode" placeholder="Pincode"[(ngModel)]="userDetails.pincode" required>
+                                    <input type="text" name="pincode" placeholder="Pincode"[(ngModel)]="userDetails.pincode"  pattern="^[0-9]{1,9}$" required>
                                   </div>
                                 </div>
                                 <div class="row ">

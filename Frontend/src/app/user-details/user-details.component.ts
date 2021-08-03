@@ -1,7 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,FormControl } from '@angular/forms';
 import { FormservicesService } from '../formservices.service';
+
 
 @Component({
   selector: 'app-user-details',
