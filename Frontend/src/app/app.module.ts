@@ -54,6 +54,7 @@ import { Template5Component } from './template5/template5.component';
 import { NgxPrintModule } from 'ngx-print';
 import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
