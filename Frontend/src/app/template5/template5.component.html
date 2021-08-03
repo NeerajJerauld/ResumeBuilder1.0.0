@@ -1,7 +1,9 @@
+
 <div >
 <div id = "Content">
 
-<div class="container" *ngFor="let UserDetails of userDetails">
+<div class="main" *ngFor="let UserDetails of userDetails">
+<div class="container" >
     <div class="left-side">
         <div class="profile-text">
             <div class="imgBx">
@@ -30,7 +32,7 @@
                 </li> -->
                 <li>
                     <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-                    <span class="text">{{UserDetails.address}}, {{UserDetails.city}}</span>
+                    <span class="text">{{UserDetails.address}}, {{UserDetails.city}}, {{UserDetails.pincode}}</span>
                 </li>
             </ul>
         </div>
@@ -203,11 +205,13 @@
     </div>
     </div>
 </div>
-
+</div>
+</div>
 </div>
 </div>
 
 <div>
 	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
-    <button class="col-md-2">Edit</button>	
+    <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>	
 </div>
+

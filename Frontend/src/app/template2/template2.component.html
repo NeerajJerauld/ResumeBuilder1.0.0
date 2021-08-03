@@ -1,8 +1,8 @@
+
 <div >
 <div id = "Content">
-
-
-<div class="container" *ngFor="let UserDetails of userDetails">
+<div class="main" *ngFor="let UserDetails of userDetails">
+<div class="container" >
     <aside>
         <img class="personal-img" alt="personal image" src={{UserDetails.image}}>
         <h2 class="person-name"> {{UserDetails.name}}</h2>
@@ -124,7 +124,11 @@
                 <p>{{UserDetails.institution[4]}}</p>
             </div>
         </section>
+        
+
     </main>
+</div>
+</div>
 </div>
 
 </div>
@@ -132,5 +136,5 @@
 
 <div>
 	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
-    <button class="col-md-2">Edit</button>	
+    <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>	
 </div>

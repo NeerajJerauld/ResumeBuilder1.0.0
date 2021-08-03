@@ -13,7 +13,7 @@
                     <div class="col-12">
                         <div class="container">
                             <div class="content">
-                              <form #otherform="ngForm" [hidden]=Form1 >
+                              <form #otherform="ngForm" [hidden]=Form1 (ngSubmit)="navigate()" >
                                 <div class="user-details">
                                   <div class="input-box">
                                     <span class="details">Project</span>
@@ -25,7 +25,7 @@
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Skills *</span>
-                                    <input type="text" name="skills" [(ngModel)]="otherDetails.skills[0]" placeholder="Skills" >
+                                    <input type="text" name="skills" [(ngModel)]="otherDetails.skills[0]" placeholder="Skills" required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Interests</span>
@@ -41,7 +41,7 @@
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Language *</span>
-                                    <input type="text" name="language" [(ngModel)]="otherDetails.language[0]" placeholder="Language" >
+                                    <input type="text" name="language" [(ngModel)]="otherDetails.language[0]" placeholder="Language" required>
                                   </div>
                                   <div class="input-box">
                                     <span class="details">Language proficiency</span>
@@ -55,17 +55,17 @@
                                    <button (click)="back()"> Back </button>
                                 </div>
                                 <div class="button col-md-4">
-                                  <button (click)="f1()"> +Add </button>
+                                  <input type="button" (click)="f1()" [disabled]="otherform.form.invalid" value="+Add"> 
                                </div>
                                 <div class="button col-md-4">
-                                  <input type="submit" [disabled]="otherform.form.invalid" (click)="navigate()" value="save">
+                                  <input type="submit" [disabled]="otherform.form.invalid"  value="save">
                                   </div>
                             </div>
                               </form>
                             </div>
 
                             <div class="content">
-                              <form #otherform="ngForm" [hidden]=Form2 >
+                              <form #otherform="ngForm" [hidden]=Form2 (ngSubmit)="navigate()">
                                 <div class="user-details">
                                   <div class="input-box">
                                     <span class="details">Project</span>
@@ -107,17 +107,17 @@
                                    <button (click)="f0()"> Back </button>
                                 </div>
                                 <div class="button col-md-4">
-                                  <button (click)="f2()"> +Add </button>
+                                  <input type="button" (click)="f2()" value="+Add"> 
                                </div>
                                 <div class="button col-md-4">
-                                  <input type="submit" [disabled]="otherform.form.invalid" (click)="navigate()" value="save">
+                                  <input type="submit" [disabled]="otherform.form.invalid"  value="save">
                                   </div>
                             </div>
                               </form>
                             </div>
 
                             <div class="content">
-                              <form #otherform="ngForm" [hidden]=Form3 >
+                              <form #otherform="ngForm" [hidden]=Form3 (ngSubmit)="navigate()">
                                 <div class="user-details">
                                   <div class="input-box">
                                     <span class="details">Project</span>
@@ -160,7 +160,7 @@
                                 </div>
                         
                                 <div class="button col-md-6">
-                                  <input type="submit" [disabled]="otherform.form.invalid" (click)="navigate()" value="save">
+                                  <input type="submit" [disabled]="otherform.form.invalid"  value="save">
                                   </div>
                             </div>
                               </form>

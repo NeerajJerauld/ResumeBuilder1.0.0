@@ -73,9 +73,9 @@ export class FormservicesService {
 
   newUser()
   {   
-    var userdata=Object.assign(this.userDetails,this.educationDetails,this.experienceDetails,this.otherDetails)
-    console.log(userdata);
-    return this.http.post("http://localhost:3000/userinsert",{"UserDetails":userdata})
+    Object.assign(this.userDetails,this.educationDetails,this.experienceDetails,this.otherDetails);
+    console.log(this.userDetails);
+    return this.http.post("http://localhost:3000/userinsert",{"UserDetails":this.userDetails})
     .subscribe(data =>{console.log(data)})
   }
 
@@ -96,7 +96,7 @@ export class FormservicesService {
     Certificatetitle:[''],
     Certificateyear:[''],
     languagename:[''],
-    proficinery:[''],
+    proficiency:[''],
   
     title:[''],
     companyname:[''],
@@ -125,6 +125,17 @@ export class FormservicesService {
     GetUser(){
       return this.UserDetails;
     }
+
+ 
+    updateUser(UserDetails:any)
+    {
+      console.log('client update')
+      
+      return this.http.put('http://localhost:3000/update',UserDetails )
+      .subscribe(data =>{console.log(data)})
+    }
+  
+
 }
 
 
