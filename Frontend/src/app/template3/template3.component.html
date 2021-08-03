@@ -242,7 +242,7 @@
 </div>
 </div>
 
-<div>
+<div  *ngFor="let UserDetails of userDetails">
 	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
     <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>	
 </div>
