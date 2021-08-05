@@ -38,6 +38,8 @@ const UserDetailsSchema = new Schema({
   projectname: Array,
   projectdescription: Array,
   skill: Array,
+  fieldname:String,
+  fieldinput:String
 });
 
 var UserDetailsData = mongoose.model("userdetailsdata", UserDetailsSchema);

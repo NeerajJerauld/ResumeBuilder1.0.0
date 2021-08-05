@@ -28,6 +28,8 @@ export class Template5Component implements OnInit {
     Certificateyear:[''],
     languagename:[''],
     proficiency:[''],
+    fieldname:'',
+    fieldinput:'',
   
     title:[''],
     companyname:[''],

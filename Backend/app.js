@@ -88,6 +88,8 @@ function verifyToken(req, res, next) {
   skill: req.body.UserDetails.skills,
   Certificatetitle:req.body.UserDetails.certificate,
   Certificateyear: req.body.UserDetails.certificateyear,
+  fieldname:req.body.UserDetails.fieldname,
+  fieldinput:req.body.UserDetails.fieldinput
 
      }
    
@@ -252,8 +254,9 @@ app.put('/update',(req,res)=>{
   projectdescription=req.body.description, 
   skill= req.body.skills,
   Certificatetitle=req.body.certificate,
-  Certificateyear= req.body.certificateyear;
-
+  Certificateyear= req.body.certificateyear,
+  fieldname=req.body.fieldname,
+  fieldinput=req.body.fieldinput;
  
  UserData.findByIdAndUpdate({"_id":id},
                               {$set:{
@@ -290,7 +293,8 @@ app.put('/update',(req,res)=>{
                                 "skill": skill,
                                 "Certificatetitle":Certificatetitle,
                                 "Certificateyear": Certificateyear,
-                              
+                                "fieldname":fieldname,
+                                "fieldinput":fieldinput
                             }})
  .then(function(){
      res.send();

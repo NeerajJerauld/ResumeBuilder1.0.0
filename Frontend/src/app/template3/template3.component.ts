@@ -37,6 +37,9 @@ export class Template3Component implements OnInit {
     achivements:[''],
     references:[''],
 
+    fieldname:'',
+    fieldinput:'',
+
     qualification:[''],
     institution:[''],
     Course:[''],

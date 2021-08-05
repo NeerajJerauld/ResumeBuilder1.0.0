@@ -17,7 +17,9 @@ export class OthersComponent implements OnInit {
     certificate:[''],
     certificateyear:[''],
     language:[''],
-    proficiency:['']
+    proficiency:[''],
+    fieldname:'',
+    fieldinput:''
   }
 
   Form1=false;
@@ -56,5 +58,8 @@ f2(){
   ngOnInit(): void {
     this.otherDetails=this.FormServices.getotherDetails()
   }
-
+showImage: boolean = false;
+toggleImage(): void{
+  this.showImage = !this.showImage;
+}
 }
