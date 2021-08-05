@@ -54,6 +54,7 @@ import { Template5Component } from './template5/template5.component';
 import { NgxPrintModule } from 'ngx-print';
 import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
 
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { UpdatedetailsComponent } from './updatedetails/updatedetails.component'
     NgxPrintModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxSpinnerModule,
     
        // * MATERIAL IMPORTS
        MatSidenavModule,
@@ -111,6 +113,7 @@ import { UpdatedetailsComponent } from './updatedetails/updatedetails.component'
       NgbModule,
     RouterModule
   ],
+  
   providers: [AuthService,
     {
       provide: HTTP_INTERCEPTORS,

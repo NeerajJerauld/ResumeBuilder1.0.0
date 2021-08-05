@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -39,7 +40,7 @@ customerfeedbackstop:any = setInterval(()=>{
   }
 },15)
 
-  constructor() { }
+  constructor(public _auth:AuthService) { }
 
   ngOnInit(): void {
   }
