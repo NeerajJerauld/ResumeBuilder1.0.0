@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    "mongodb+srv://userone:userone@njmongodbcluster.m9krg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    'mongodb://Rahulk:rahulk2308@cluster0-shard-00-00.k8mnb.mongodb.net:27017,cluster0-shard-00-01.k8mnb.mongodb.net:27017,cluster0-shard-00-02.k8mnb.mongodb.net:27017/Project?ssl=true&replicaSet=atlas-8otjwe-shard-0&authSource=admin&retryWrites=true&w=majority'
   )
   .then(() => console.log("MongoDB connected.>Credential"));
 
@@ -12,7 +12,7 @@ const CredentialSchema = new Schema({
   password: String,
   firstname: String,
   lastname: String,
-  createdTime: Date,
+ 
 });
 
 var Credentialdata = mongoose.model("credentialdata", CredentialSchema);

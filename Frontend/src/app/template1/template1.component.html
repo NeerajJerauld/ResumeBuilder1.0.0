@@ -1,0 +1,175 @@
+<ngx-spinner  type="ball-spin-clockwise" ></ngx-spinner>
+<div *ngFor="let UserDetails of userDetails" >
+<div id = "Content">
+
+<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<div class="main" >
+<div class="container" >
+  <div class="header">
+    <div class="full-name">
+      <span class="first-name">{{UserDetails.name}}</span> 
+      <!-- <span class="last-name">Doe</span> -->
+    </div>
+    <div class="contact-info">
+      <span class="email">Email: </span>
+      <span class="email-val">{{UserDetails.email}}</span>
+      <span class="separator"></span>
+      <span class="phone">Phone: </span>
+      <span class="phone-val">{{UserDetails.phonenumber}}</span>
+    </div>
+    
+    <div class="about">
+      <!-- <span class="position">Front-End Developer </span> -->
+      <span class="desc">
+      {{UserDetails.summary}}
+      </span>
+    </div>
+  </div>
+   <div class="details">
+    <div class="section">
+      <div class="section__title" >Experience</div>
+      <div class="section__list">
+        <div class="section__list-item">
+          <div class="left">
+  
+             
+  
+            
+                  <div class="name">{{UserDetails.title[0]}}</div>
+            
+                  <div class="addr" >{{UserDetails.companyname[0]}},{{UserDetails.companyaddress[0]}}</div>
+              
+                  <div class="duration">{{UserDetails.startdate[0]}} - {{UserDetails.enddate[0]}}</div>
+         
+             
+
+                
+            </div>
+          </div>  
+                <div class="section__list-item">
+          <div class="left">
+            <div class="name">{{UserDetails.title[1]}}</div>
+            <div class="addr">{{UserDetails.companyname[1]}},{{UserDetails.companyaddress[1]}}</div>
+            <div class="duration">{{UserDetails.startdate[1]}} - {{UserDetails.enddate[1]}}</div>
+          </div>
+          
+          <div class="section__list-item">
+            <div class="left">
+              <div class="name">{{UserDetails.title[2]}}</div>
+              <div class="addr">{{UserDetails.companyaddress[2]}},{{UserDetails.companyaddress[2]}}</div>
+              <div class="duration">{{UserDetails.startdate[2]}} - {{UserDetails.enddate[2]}}</div>
+            </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="section__title">Education</div>
+      <div class="section__list">
+        <div class="section__list-item">
+          <div class="left">
+            <div class="name">{{UserDetails.qualification[0]}}</div>
+            <div class="addr">{{UserDetails.institution[0]}}, </div>
+            <div class="duration">{{UserDetails.coursestartdate[0]}} - {{UserDetails.courseenddate[0]}}</div>
+          </div>
+  
+       
+          <div class="section__list-item">
+            <div class="left">
+              <div class="name">{{UserDetails.qualification[1]}}</div>
+              <div class="addr">{{UserDetails.institution[1]}}, </div>
+              <div class="duration">{{UserDetails.coursestartdate[1]}} - {{UserDetails.courseenddate[1]}}</div>
+            </div>
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name">{{UserDetails.qualification[2]}}</div>
+                <div class="addr">{{UserDetails.institution[2]}}, </div>
+                <div class="duration">{{UserDetails.coursestartdate[2]}} - {{UserDetails.courseenddate[2]}}</div>
+              </div>
+              <div class="section__list-item">
+                <div class="left">
+                  <div class="name">{{UserDetails.qualification[3]}}</div>
+                  <div class="addr">{{UserDetails.institution[3]}}, </div>
+                  <div class="duration">{{UserDetails.coursestartdate[3]}} - {{UserDetails.courseenddate[3]}}</div>
+                </div>
+                <div class="section__list-item">
+                  <div class="left">
+                    <div class="name">{{UserDetails.qualification[4]}}</div>
+                    <div class="addr">{{UserDetails.institution[4]}}, </div>
+                    <div class="duration">{{UserDetails.coursestartdate[4]}} - {{UserDetails.courseenddate[4]}}</div>
+                  </div>
+              
+      </div>
+      
+  </div>
+     <div class="section">
+      <div class="section__title">Projects</div> 
+       <div class="section__list">
+         <div class="section__list-item">
+           <div class="name">{{UserDetails.projectname[0]}}</div>
+           <div class="text">{{UserDetails.projectdescription[0]}}</div>
+         </div>
+         
+         <div class="section__list-item">
+          <div class="name">{{UserDetails.projectname[0]}}</div>
+          <div class="text">{{UserDetails.projectdescription[0]}}</div>
+        </div>
+        
+        <div class="section__list-item">
+          <div class="name">{{UserDetails.projectname[1]}}</div>
+          <div class="text">{{UserDetails.projectdescription[1]}}</div>
+        </div>
+        
+        <div class="section__list-item">
+          <div class="name">{{UserDetails.projectname[2]}}</div>
+          <div class="text">{{UserDetails.projectdescription[2]}}</div>
+        </div>
+        
+
+       </div>
+    </div>
+     <div class="section">
+       <div class="section__title">Skills</div>
+       <div class="skills">
+         <div class="skills__item">
+           <div class="left"><div class="name">
+             {{UserDetails.skill[0]}}
+             </div></div>
+         
+         
+       </div>
+       <div class="skills__item">
+           <div class="left"><div class="name">
+             {{UserDetails.skill[1]}}</div></div>
+          
+       </div>
+       <div class="skills__item">
+        <div class="left"><div class="name">
+          {{UserDetails.skill[2]}}</div></div>
+       
+    </div>
+     <div class="section">
+     <div class="section__title">
+       Interests
+       </div>
+       <div class="section__list">
+         <div class="section__list-item">
+                  {{UserDetails.interest[0]}}, {{UserDetails.interest[1]}},{{UserDetails.interest[2]}}.
+          </div>
+       </div>
+     </div>
+     </div>
+  </div>
+            </div>
+</div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+</div>
+
+
+<div>
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+    <button class="col-md-2"(click)="edituser(UserDetails)">Edit</button>	
+</div>
+</div>

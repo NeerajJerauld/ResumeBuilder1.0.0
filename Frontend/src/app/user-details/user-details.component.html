@@ -1,0 +1,84 @@
+
+<div class="row-2" class="userdetails">
+    <div class="col-12">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <div class="title">
+                  {{title}}
+                </div>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <div class="col-12">
+                        <div class="container">
+                            <div class="content">
+                              <form  #userform="ngForm">
+                                <div class="user-details" >
+                                  <div class="input-box">
+                                    <span class="details">image: </span>
+                                    <input type="file" name="userID" (change)="onselectFile($event)" placeholder="UserID No:" [(ngModel)]="userDetails.image" accept="image/*" >
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Name: * </span>
+                                    <input type="text" name="name" placeholder="name" [(ngModel)]="userDetails.name" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Summary:  </span>
+                                   <input name="summary"  [(ngModel)]="userDetails.summary">
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Email *</span>
+                                    <input type="text" name="email" placeholder="Enter your email"[(ngModel)]="userDetails.email" pattern="^[a-zA-Z0-9.%+]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}" required>
+                                  </div>
+                               
+                                  <div class="input-box">
+                                    <span class="details">Phone Number *</span>
+                                    <input type="text" name="phoneNumber" placeholder="Enter your number"[(ngModel)]="userDetails.phoneNumber" pattern="^[0-9+]{1,11}$" required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Address *</span>
+                                    <input type="textarea" name="address" placeholder="Address"[(ngModel)]="userDetails.address"  required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">City *</span>
+                                    <input type="text" name="city"placeholder="City" [(ngModel)]="userDetails.city"   required>
+                                  </div>
+                                  <div class="input-box">
+                                    <span class="details">Pincode *</span>
+                                    <input type="text" name="pincode" placeholder="Pincode"[(ngModel)]="userDetails.pincode"  pattern="^[0-9]{1,9}$" required>
+                                  </div>
+                                </div>
+                                <div class="row ">
+                                  <div class="button col-md-6">
+                                     <!-- <button > Back </button> -->
+                                  </div>
+                                  <div class="button col-md-6">
+                                    <input type="submit" (click)="navigate()" [disabled]="userform.form.invalid" value="Next">
+                                    </div>
+                              </div>
+                         
+                              </form>
+                            </div>
+                          </div>
+                        
+                    </div>             
+            
+                </div>
+              </div>
+            </div>
+          </div>
+        
+    
+     </div>
+</div>
+
+
+
+
+
+
+
+
+
+       

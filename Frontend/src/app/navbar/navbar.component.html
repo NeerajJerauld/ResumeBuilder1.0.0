@@ -1,72 +1,139 @@
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="nav.visible"> -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
-    <div class="container-fluid">
-      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <button class="btn btn-outline-primary ms-5 me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page" routerLink="dashboard"
-                >Dashboard</a
-              >
-            </button>
-          </li>
-          <!-- <li class="nav-item">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page" routerLink="/booklist"
-                >Books</a
-              >
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page" routerLink="/authorlist"
-                >Authors</a
-              >
-            </button>
-          </li>
-          <li class="nav-item" *ngIf="_auth.loggedIn()">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page"   routerLink="/addbook"
-                >Add Book</a
-              >
-            </button>
-          </li>
-          <li class="nav-item " *ngIf="_auth.loggedIn()">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page"   routerLink="/addauthor"
-                >Add Author</a
-              >
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-outline-primary me-2 " type="button">
-              <a class="nav-link active text-white" aria-current="page"(click)="logOut()"
-                >Log Out</a
-              >
-            </button>
-          </li> -->
-  
-  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" id="logo-font-family">
+          <img src="../../assets/images/logo.png" alt="" width="10%" height="60" >
           
-        </ul>
+        </a>
+      </div>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-success me-2" type="button">
+            <a class="nav-link active" aria-current="page" routerLink="/"
+              >Home</a
+            >
+          </button>
+        </li>
+        <li class="nav-item " *ngIf="_auth.loggedIn()">
+          <button class="btn btn-sm btn-outline-success me-2" type="button">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="dashboard"
+              >Dashboard</a
+            >
+          </button>
+        </li>
+        <li class="nav-item" >
+          <button class="btn btn-sm btn-outline-success me-2" type="button" >
+            <a
+              class="nav-link active"
+              aria-current="page"
+              routerLink="templates"
+              
+              >Templates</a
+            >
+          </button>
+        </li>
+
+       
+        <li class="nav-item" *ngIf="_auth.loggedIn() === false">
+          <button
+            class="btn btn-sm btn-outline-success me-2"
+            type="button"
+            (click)="openLg(content)"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            (click)="loginImage()"
+          >
+            <a class="nav-link active" aria-current="page" routerLink="login"
+              >Login</a
+            >
+          </button>
+        </li>
+        <li class="nav-item" *ngIf="_auth.loggedIn() === false">
+          <button
+            class="btn btn-sm btn-outline-success me-2"
+            type="button"
+            (click)="openLg(content)"
+            data-toggle="modal"
+            data-target="#exampleModal"
+            (click)="signinImage()"
+          >
+            <a class="nav-link active" aria-current="page" routerLink="signin"
+              >SignIn</a
+            >
+          </button>
+        </li>
+
+        
+
+        <li class="nav-item" *ngIf="_auth.loggedIn() === true">
+          <button class="btn btn-sm btn-outline-success me-2" type="button">
+            <a class="nav-link active" aria-current="page" (click)="logOut()"
+            
+              >Logout</a
+            >
+          </button>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ------------------------------------------ -->
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+
+
+    <div class="container ">
+      <div class="row g-0">
+        <div class="col-lg-6 ">
+          <img src="{{imageSrc}}" alt="" style="width: 100%;height:100%;object-fit: fill ;">
+        
+        </div>
+        <div class="col-lg-6 ">
+          <div class="col  d-flex justify-content-center">
+            
+            <div class="col-8 btn-group mb-2 mt-3 ms-auto ">
+               <a class=" btn btn-primary rounded-pill" routerLink="login" role="button"(click)="loginImage()">LogIn</a>
+              <a class="btn btn-primary rounded-pill" routerLink="signin" role="button"(click)="signinImage()">SignIn</a>
+              
+    
+            </div>
+            <button type="button" class="btn-close btn-secondary btn-floating ms-auto"  data-bs-dismiss="modal" aria-label="Close"  (click)="closeModal()"  >
+              <!-- <button type="button" class="btn-close btn-secondary btn-floating ms-auto"  data-bs-dismiss="modal" aria-label="Close"  (click)="modal.close('Close click')"  > -->
+
+            </button>
+            
+         
+          </div>
+          <div class="col bg-primary">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-  
-  
-  
-  
-  
-  <!-- ------------------------------------------ -->
+    
+    </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="closeModal()" >Close</button>
+  </div>
+</ng-template>

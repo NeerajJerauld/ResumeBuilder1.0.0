@@ -1,1 +1,98 @@
-<p>login works!</p>
+<div class="container-fluid col-lg-12  g-0 bg-light">
+    <!-- <div class="row text-center mb-3 mt-5 justify-content-center">
+      <p class="h3">Sign In</p>
+    </div> -->
+    <!-- END OF SIGN IN TEXT -->
+  
+    <div class="row bgcolorBlue justify-content-center mb-3 rounded">
+      <div class="col-12 px-5">
+        <!-- FORM STARTING -->
+        <form role="form" class="row g-3 mt-4" #loginform="ngForm" (ngSubmit)="loginUser()">
+          <div class="col-12">
+  
+    
+            <label for="userName" class="form-label">Username</label>
+            <input
+            type="text" class="form-control" id="Name" name="userName" [(ngModel)]="user.username" (focus))="clearText()" required
+            />
+            <!-- <label  style="color:red;"  name="error" [(ngModel)]="error">{{error}}</label> -->
+          </div>
+          <!-- <div class="col-12 ">
+            <p class="h6 text-danger" id="msglbl" hidden=true></p>
+          </div> -->
+          <!-- END OF EMAIL INPUT -->
+  
+          <div class="col-12 mb-3">
+            <div class="d-flex justify-content-between">
+             
+  
+              <label for="inputPassword" class="form-label">Password</label>
+              <a href="#" target="_blank" class="text-decoration-none">
+                Forgot Password?</a
+              >
+            </div>
+  
+            <input
+            type="password" class="form-control"
+              class="form-control col-12 rounded-3"
+              id="inputPassword" name="password" [(ngModel)]="user.password" placeholder="Min 8 character,Atleast one digit & one uppercase" required
+            />
+            <label id="passwordErrorlbl" style="color: red;" name="passwordErrorlbl" [(ngModel)]="passwordError">{{passwordError}}</label>
+         
+          </div>
+          <!-- <div class="col-12 ">
+            <p class="h6 text-danger" id="passwordErr" hidden = true></p>
+          </div> -->
+          <!-- END OF PASSWORD INPUT -->
+  
+          <div class="col-12 form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="gridCheck" />
+            <label class="form-check-label" for="gridCheck">
+              Remember me
+            </label>
+          </div>
+          <!-- END OF REMEMBER ME CHECK BOX -->
+          
+          <div class="col-10 mb-4 mx-auto">
+            <button
+              type = "submit"
+              class="btn btn-success mx-auto w-100 rounded-pill"
+              [disabled]=loginform.form.invalid
+            >
+              Sign in
+            </button>
+          </div>
+          <!-- END OF SUBMIT BUTTON -->
+        </form>
+        <!-- END OF FORM -->
+      </div>
+      <!-- END OF COLUMN TEXT -->
+    </div>
+    <!-- END OF SIGN IN ROW -->
+  
+    <div class="row text-center mb-5 p-3 bgcolorBlue rounded">
+      <p class="col-12 h6">
+        New to Innovo   ?
+        <a routerLink="/signup" class="text-decoration-none ms-2 text-primary"
+          >Create an account</a
+        >
+      </p>
+    </div>
+    <!-- END OF NEW ACCOUNT ROW -->
+  
+    <div class="row p-3 bgcolorBlue rounded">
+      <div class="col d-flex justify-content-around">
+        <a href="#" target="_blank" class="text-decoration-none text-primary">Terms</a>
+        <a href="#" target="_blank" class="text-decoration-none text-primary">Privacy</a>
+        <a href="#" target="_blank" class="text-decoration-none text-primary">Security</a>
+        <a
+          href="#"
+          target="_blank"
+          class="text-decoration-none text-secondary"
+          >Contact Innovo</a
+        >
+      </div>
+    </div>
+    <!-- END OF TERMS AND POLICY -->
+  </div>
+  <!-- END OF CONTAINER -->
