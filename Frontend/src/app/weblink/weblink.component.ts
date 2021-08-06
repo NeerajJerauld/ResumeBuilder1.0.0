@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormservicesService } from '../formservices.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-weblink',
@@ -8,7 +9,7 @@ import { FormservicesService } from '../formservices.service';
   styleUrls: ['./weblink.component.css']
 })
 export class WeblinkComponent implements OnInit {
-  userDetails= [{
+  userDetails:any= [{
     name:'',
     image:'',
     summary:'',
@@ -18,14 +19,14 @@ export class WeblinkComponent implements OnInit {
     city:'',
     pincode:'',
  
-    projectname:[''],
+    projectname:['project1','project2','project3'],
     projectdescription:[''],
     skill:[''],
     interest:[''],
     Certificatetitle:[''],
     Certificateyear:[''],
     languagename:[''],
-    // proficinery:[''],
+    proficinery:[''],
   
     title:[''],
     companyname:[''],
@@ -44,21 +45,17 @@ export class WeblinkComponent implements OnInit {
     year:['']
   }]
 
-  constructor(public router: ActivatedRoute,public FormServices:FormservicesService) { }
+  constructor(public router: ActivatedRoute,public FormServices:FormservicesService,private http:HttpClient) { }
   ngOnInit(): void {
    
     this.router.params.subscribe(params => {
-      // this.FormServices.getUserDetailsOnEmail(params.userID).subscribe((data)=>{
-
-      //   this.userDetails = JSON.parse(JSON.stringify(data));
-      // })
-      // this.userDetails = JSON.parse(JSON.stringify(this.FormServices.getUserDetailsOnEmail(params.userID)));
-      // this.userDetails= this.FormServices.getUserDetailsOnEmail(params.userID);
-      // this.userDetails = this.FormServices.getUserDetailsOnEmail(params.userID)
-      this.FormServices.getUserDetailsOnEmail(params.userID)
-      console.log("I am here!!!")
-      console.log(this.FormServices.getUserDetailsOnEmail(params.userID))
+      this.http.get('http://localhost:3000/getuser/'+params.userID).subscribe((data)=>{
+        this.userDetails=JSON.parse(JSON.stringify(data));
+        console.log(this.userDetails)
+       })
+     
     })
+    
   }
 
 }

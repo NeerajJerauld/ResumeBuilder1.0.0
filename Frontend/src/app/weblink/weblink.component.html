@@ -1,32 +1,22 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-6 ">
-            <img class=" rounded-circle mx-auto d-block" src="../../assets/images/logo.png" alt="" style="width: 320px;height:320px; " >
-        </div>
-        <div class="col-lg-3"></div>
-    </div>
-    <hr> -->
-    <!-- END OF IMAGE -->
-    <!-- name:'',
-    image:'',
-    summary:'',
-    email:'',
-    phonenumber:'',
-    address:'',
-    city:'',
-    pincode:'', -->
-    <!-- <div class="row">
-        <div class="col-lg-12">
-            <p>HEllo My name is Neeraj Jerauld</p>
-        </div>
-    </div>
-
-</div> -->
 <div class="container">
     <div class="row">
-            <h1 id="name" class="mt-5">John Doe</h1>
-            <h2 class="line-1 anim-typewriter mt-5">Aspiring Web Developer</h2>
+        <div class="col-lg-6 mt-5">
+          <h1 id="name" class="mt-5">{{userDetails[0].name}}</h1>
+          <h2 class="line-1 anim-typewriter mt-5">Aspiring {{userDetails[0].title}}</h2>
+        </div>
+        <div class="col-lg-6 mt-5">
+            <img class=" rounded-circle mx-auto d-block" src="{{userDetails.image}}" alt="" style="width: 320px;height:320px; " >
+        </div>
+        <!-- <div class="col-lg-3"></div> -->
+    </div>
+ 
+    <!-- END OF IMAGE -->
+
+
+</div>
+<div class="container">
+    <div class="row mt-5">
+           
 
     </div>
     
@@ -34,7 +24,7 @@
   <div id="about">
     <div class="container">
       <h1 class="text-center aboutHeading">About Me</h1>
-      <p class="aboutPG text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita, explicabo nihil! Animi cumque eum numquam, omnis ratione repudiandae sit suscipit voluptas. Alias aperiam commodi, exercitationem incidunt nostrum numquam repellendus unde.</p>
+      <p class="aboutPG text-center">{{userDetails[0].summary}}</p>
     </div>
   </div>
   <!--Projects Section - Add your websites to the cards - You can add more as a Bootstrap Deck-->
@@ -42,29 +32,27 @@
     <div class="container">
       <h1 class="text-center aboutHeading">Projects</h1>
       <div class="row pt-5 m-auto" id="projectCards">
-        <div class="col-md-6 col-lg-4 pb-3">
-          <div class="card card-custom bg-white border-white border-0">
+        <div class="col-md-6 col-lg-4 pb-3" *ngFor="let projectname of userDetails[0].projectname; let i = index">
+          <div class="card card-custom bg-white border-white border-0"  >
             <!--Enter Project Logo/Favicon here-->
             <div class="card-custom-img" id="project1"></div>
        
             <div class="card-body" style="overflow-y: auto">
-              <h4 class="card-title">Project 1</h4>
-              <p class="card-text">Enter details about your project here...</p>
+              <h4 class="card-title" >{{projectname}}</h4>
+              <p class="card-text" *ngFor="let projectdescription of userDetails[0].projectdescription">{{projectdescription}}</p>
             </div>
-            <!-- <div class="card-footer" style="background: inherit; border-color: inherit;">
-              <a href="#" class="btn btn-info" target="_blank">View Live</a>
-              <a href="#" class="btn btn-outline-primary">Read More</a>
-            </div> -->
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 pb-3">
+       
+        
+        <div class="col-md-6 col-lg-4 pb-3" *ngFor="let skill of userDetails[0].skill">
           <div class="card card-custom bg-white border-white border-0">
             <!--Enter Project Logo/Favicon here-->
             <div class="card-custom-img" id="project2"></div>
         
             <div class="card-body" style="overflow-y: auto">
-              <h4 class="card-title">Project 2</h4>
-              <p class="card-text">Enter details about your project here...</p>
+              <h4 class="card-title">Skills</h4>
+              <p class="card-text"*ngFor="let skill of userDetails[0].skill">{{skill}}</p>
             </div>
             <!-- <div class="card-footer" style="background: inherit; border-color: inherit;">
               <a href="#" class="btn btn-info">View Live</a>
@@ -73,24 +61,44 @@
           </div>
         </div>
         <div class="col-md-6 col-lg-4 pb-3">
-          <div class="card card-custom bg-white border-white border-0">
+          <div class="card card-custom bg-white border-white border-0" *ngFor="let Certificatetitle of userDetails[0].Certificatetitle">
             <!--Enter Project Logo/Favicon here-->
             <div class="card-custom-img" id="portfolio"></div>
 
             <div class="card-body" style="overflow-y: auto">
-              <h4 class="card-title">My Portfolio</h4>
-              <p class="card-text">Enter details about your project here...</p>
+              <h4 class="card-title">Certificate</h4>
+              <p class="card-text">Certificatetitle:{{Certificatetitle}}</p>
+              <p class="card-text"  *ngFor="let Certificateyear of userDetails[0].Certificateyear">Certificateyear:{{Certificateyear}}</p>
+
             </div>
-            <!-- <div class="card-footer" style="background: inherit; border-color: inherit;">
-              <a href="#" class="btn btn-info">View Live</a>
-              <button type="button" class="btn btn-outline-primary">Read More</button>
-            </div> -->
+
           </div>
         </div>
+
+        <div class="col-md-6 col-lg-4 pb-3">
+          <div class="card card-custom bg-white border-white border-0" *ngFor="let qualification of userDetails[0].qualification">
+            <!--Enter Project Logo/Favicon here-->
+            <div class="card-custom-img" id="portfolio"></div>
+
+            <div class="card-body" style="overflow-y: auto">
+              <h4 class="card-title">Educational qualification</h4>
+              <p class="card-text">Qualification:{{qualification}}</p>
+              <p class="card-text"  *ngFor="let institution of userDetails[0].institution">Institution:{{institution}}</p>
+              <p class="card-text"  *ngFor="let Course of userDetails[0].Course">Course:{{Course}}</p>
+              <p class="card-text"  *ngFor="let year of userDetails[0].year">year:{{year}}</p>
+
+            </div>
+
+          </div>
+        </div>
+
+
       </div>
     </div>
   </div>
 
+
+  
  
 </div>
 

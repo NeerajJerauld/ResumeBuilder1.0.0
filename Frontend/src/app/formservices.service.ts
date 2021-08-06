@@ -166,11 +166,11 @@ export class FormservicesService {
       return this.UserDetails;
     }
     getUserDetailsOnEmail(weblinkData:any){
-      console.log(weblinkData)
+ 
       this.http.get('http://localhost:3000/getuser/'+weblinkData).subscribe((data)=>{
         this.weblinkDetails=JSON.parse(JSON.stringify(data));
-        console.log("------------------------Database to Service")
-        console.log(data)
+        console.log("-------EERE IS THE WEBLINK Data")
+        console.log( this.weblinkDetails)
         return(this.weblinkDetails);
        })
     
