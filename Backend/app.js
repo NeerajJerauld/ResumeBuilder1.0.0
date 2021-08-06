@@ -168,8 +168,7 @@ app.post('/signup', function (req, res) {
               user.save()
                   .then(() => {
                       console.log("Sucessfully Saved");
-                      msg = "Welcome to Innovo Resume. We promise you a great experience creating great resume."
-                      sendMail(item.email, msg)
+                      sendMail(item.email)
                       res.status(200).send({message:"Sucessfully Saved"});
 
                   })
@@ -276,7 +275,7 @@ app.put('/update',(req,res)=>{
 
 
 // async..await is not allowed in global scope, must use a wrapper
-async function sendMail(email, msg) {
+async function sendMail(email) {
   // create reusable transporter object using the default SMTP transport
   let transporter =  nodemailer.createTransport({
     service: "gmail",
@@ -290,9 +289,9 @@ async function sendMail(email, msg) {
   let info = await transporter.sendMail({
     from: '"Innovo resumes" <help@innovo.com>', // sender address
     to: email,// list of receivers
-    subject: "Hello ✔", // Subject line
-    text: msg, // plain text body
-    html: "<b>msg</b>", // html body
+    subject: "Hello User", // Subject line
+    text: "Welcome to Innovo Resume. We promise you a great experience creating great resume.", // plain text body
+    html: "<b>Welcome to Innovo Resume. We promise you a great experience creating great resume.</b>", // html body
   });
 
   console.log("Message sent: %s", info.messageId);
