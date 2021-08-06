@@ -3,17 +3,14 @@ const Credentialdata = require('./src/model/Credentialdata');
 const multer=require("multer");
 const path=require("path");
 const UserData = require('./src/model/UserDetails');
-//const User = require('./src/model/user');
 const cors = require('cors');
+const nodemailer = require('nodemailer');
 const jwt = require('jsonwebtoken')
 var app = new express();
 app.use(cors());
 app.use(express.json({limit: '50mb'}));
 username='admin';
 password='Admin123';
-
-//const authorRouter = require('./src/routes/authorRoute');
-//app.use("/author", authorRouter);
 
 // Set Storage Engine
 const storage = multer.diskStorage({
@@ -27,10 +24,6 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage
 }).single("image");
-
-
-
-
 
 function verifyToken(req, res, next) {
     if(!req.headers.authorization) {
@@ -99,15 +92,6 @@ function verifyToken(req, res, next) {
  console.log('user data successfully uploaded')
 });
 
-// app.delete('/remove/:title',(req,res)=>{
-   
-//     title = req.params.title;
-//     Bookdata.findOneAndDelete({"title":title})
-//     .then(()=>{
-//         console.log('success')
-//         res.send();
-//     })
-//   })
 
 
 app.get('/getuser/:email',  (req, res) => {
@@ -120,15 +104,6 @@ app.get('/getuser/:email',  (req, res) => {
 
 })
 
-// app.get('/user/:id',  (req, res) => {
-//   const id = req.params.id;
-//   UserData.find({"_id":id})
-//   .then((Data)=>{
-//     console.log(Data);
-//       res.send(Data);
-//   });
-
-// })
 
 
 function checkuser(req,res, next){
@@ -195,6 +170,7 @@ app.post('/signup', function (req, res) {
               user.save()
                   .then(() => {
                       console.log("Sucessfully Saved");
+                      sendMail(item.email)
                       res.status(200).send({message:"Sucessfully Saved"});
 
                   })
@@ -301,97 +277,38 @@ app.put('/update',(req,res)=>{
  })
 })
 
+
+// async..await is not allowed in global scope, must use a wrapper
+async function sendMail(email) {
+  // create reusable transporter object using the default SMTP transport
+  let transporter =  nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: 'innovoteam.test@gmail.com', 
+      pass: 'Platform/8',
+    },
+  });
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: '"Innovo resumes" <help@innovo.com>', // sender address
+    to: email,// list of receivers
+    subject: "Hello User", // Subject line
+    text: "Welcome to Innovo Resume. We promise you a great experience creating great resume.", // plain text body
+    html: "<b>Welcome to Innovo Resume. We promise you a great experience creating great resume.</b>", // html body
+  });
+
+  console.log("Message sent: %s", info.messageId);
+  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+  console.log(info);
+}
+
+//sendMail().catch(console.error);
  
     
       
    
    
-// app.delete('/remove/:title',(req,res)=>{
-   
-//      title = req.params.title;
-//      Bookdata.findByIdAndDelete({"title":title})
-//      .then(()=>{
-//          console.log('success')
-//          res.send();
-//      })
-//    })
-
-// //    -------------------Author--------------------------
-// app.post('/author/insert',verifyToken,function(req,res){
-//     console.log(req.body);
-       
-//     var item=
-
-//     {
-//              author:req.body.author.author,
-//              country:req.body.author.country,
-//              famousbooks:req.body.author.famousbooks,
-//              genre:req.body.author.genre,
-//              description:req.body.author.description,
-//              image:req.body.author.image
-
-//      }
-
-//  var author=Authordata(item);
-//  author.save()
-// });
-// app.get('/author/authorlist',function(req,res){
-    
-//     console.log("Author get value");
-//     Authordata.find()
-//                 .then(function(authors){
-//                     console.log(authors);
-//                     res.send(authors);
-//                 });
-// });
-// app.delete('/author/remove/:author',(req,res)=>{
-   
-//     author = req.params.author;
-//     Authordata.findOneAndDelete({"author":author})
-//     .then(()=>{
-//         console.log('success')
-//         res.send();
-//     })
-//   })
-
-
-// app.get('/author/authordetails/:author',  (req, res) => {
-//     const author = req.params.author;
-//     Authordata.findOne({"author":author})
-//     .then((author)=>{
-//         res.send(author);
-//     });
-// })
-
-//     app.put('/author/update/:oldauthor',(req,res)=>{
-//       console.log("Hello inside put"+req.body.author +"   o"+req.params.oldauthor)
-//       const update = {
-//       author:req.body.author,
-//       author:req.body.author,
-//       genre:req.body.genre,
-//       description:req.body.description,
-//       image:req.body.image
-//       };
-//      Authordata.findOneAndUpdate({"author":req.params.oldauthor},update)
-//      .then(function(){
-//         res.send();
-//     });
-// })
-      
- 
-    
-      
-   
-   
-// app.delete('/author/remove/:author',(req,res)=>{
-   
-//      author = req.params.author;
-//      authordata.findByIdAndDelete({"author":author})
-//      .then(()=>{
-//          console.log('success')
-//          res.send();
-//      });
-//    })
 
 
 
