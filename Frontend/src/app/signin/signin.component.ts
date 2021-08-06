@@ -32,7 +32,7 @@ export class SigninComponent implements OnInit {
     else{
    
     this.auth.addNewMember(this.user).subscribe(res=>{
-      alert("Successful")
+      alert("Successful...Welcome Mail Sented")
       this.data.changeMessage("../../assets/images/registerLogin.png")
       this.router.navigate(["/login"]);
 
