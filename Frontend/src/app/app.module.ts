@@ -13,8 +13,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { AuthService } from './auth.service';
-
 import { TokenInterceptorService } from './token-interceptor.service';
 
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -47,6 +45,16 @@ import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
 import { FormservicesService } from './formservices.service';
 import { WeblinkComponent } from './weblink/weblink.component';
+import { AuthService } from './auth.service';
+import { Template1Component } from './template1/template1.component';
+import { Template2Component } from './template2/template2.component';
+import { Template3Component } from './template3/template3.component';
+import { Template4Component } from './template4/template4.component';
+import { Template5Component } from './template5/template5.component';
+import { NgxPrintModule } from 'ngx-print';
+import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
+
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -72,13 +80,21 @@ import { WeblinkComponent } from './weblink/weblink.component';
     Form2Component,
     Form3Component,
     WeblinkComponent,
+    Template1Component,
+    Template2Component,
+    Template3Component,
+    Template4Component,
+    Template5Component,
+    UpdatedetailsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgxPrintModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxSpinnerModule,
     
        // * MATERIAL IMPORTS
        MatSidenavModule,
@@ -97,6 +113,7 @@ import { WeblinkComponent } from './weblink/weblink.component';
       NgbModule,
     RouterModule
   ],
+  
   providers: [AuthService,
     {
       provide: HTTP_INTERCEPTORS,

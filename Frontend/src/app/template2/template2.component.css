@@ -1,0 +1,152 @@
+hr {
+	margin: auto;
+	width: 90%;
+	color: grey;
+}
+
+.container {
+	/*padding: 50px 0px 0px 0px;*/
+	margin: 50px auto;
+	display: flex;
+	justify-content: flex-start;
+	width: 90%;
+	
+
+}
+
+aside, main section {
+	background-color: white;
+	border: 1px solid grey;
+	box-shadow: 0px 0px 8px 8px #c9c9c9;
+	flex: 3;
+	/*height: auto;*/
+	margin-right: 15px;
+
+}
+
+main {
+	flex: 7;
+}
+
+main #first-section {
+	margin-bottom: 10px;
+}
+
+.personal-img {
+	width: 100%;
+  	height: auto;
+}
+
+.person-name {
+	color: #5c5c5c ;
+	font-size: 2vw;
+	margin: 5px;
+}
+
+.personal-details, .details-list {
+	font-size: 1.2vw;
+	padding: 25px;
+	list-style: none;
+	color:#009688;
+}
+
+.details-list {
+	padding-top: 0px;
+}
+
+.personal-details li{
+	margin: 15px 0px;
+	/*letter-spacing: .5px;*/
+}
+
+.personal-details li i {
+	margin-right: 10px;
+
+}
+
+.details-list li {
+	margin: 2px 0px;
+}
+
+.head-section {
+	color: #5c5c5c;
+	padding: 30px;
+	margin: 0px;
+	font-size: 1.6vw;
+}
+
+.head-section i{
+	color: #009688;
+}
+
+.progress-back {
+	border: 1px solid grey;
+	border-radius: 15px;
+	height: 1em;
+	margin-top: 10px;
+	text-align: justify;
+}
+
+.progress-text {
+	color: white;
+	text-align: center;
+}
+
+
+.progress {
+	height: 100%;
+	border-radius: 15px;
+	background-color: #009688;
+}
+
+.p-100 {width: 100%;}
+.p-95 {width: 95%;}
+.p-90 {width: 90%;}
+.p-85 {width: 85%;}
+.p-75 {width: 75%;}
+.p-30 {width: 30%;}
+
+
+.data-details {
+	width: 90%;
+	margin: auto;
+	padding: 10px 0px;
+}
+
+.data-details h3{
+	font-size: 1.2vw;
+	color: #5c5c5c;
+	margin: 10px 0px;
+}
+
+.data-details > span{
+	color: #009688;
+	margin: 15px 0px;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+.green-span {
+	background-color:#009688;
+	padding: 5px;
+	border-radius: 5px;
+	font-weight: normal;
+	color: white;
+}
+
+.fa-calendar-alt {
+	margin: 0px 10px;
+}
+
+.data-details p {
+	color: #5c5c5c;
+	margin: 10px 0px;
+	letter-spacing: .5px;
+	line-height: 1.6;
+}
+
+button{
+    width: 100px;
+    height: 40px;
+    margin: 20px;
+    align-items: center;
+}

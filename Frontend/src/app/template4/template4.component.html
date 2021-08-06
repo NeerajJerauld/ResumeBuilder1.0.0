@@ -1,0 +1,165 @@
+<ngx-spinner  type="ball-spin-clockwise" ></ngx-spinner>
+<div *ngFor="let UserDetails of userDetails" >
+<div id = "Content">
+<div class="main" >
+<div class="container" >
+    <header id="header">
+      <div id="profile-pic">
+        <img src={{UserDetails.image}} alt="profile pic" /> 
+      </div>
+      <div id="profile-details">
+        <div id="details">
+          <h1>{{UserDetails.name}}</h1>
+          <!-- <h3>Sales Manager</h3> -->
+          <ul>
+            <li>{{UserDetails.phonenumber}}</li>
+            <li>{{UserDetails.email}}</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="clr"></div>
+    <main id="main">
+      <section id="work-history">
+        <h2>Work History</h2>
+
+        <article class="work">
+          <h3>{{UserDetails.title[0]}} ({{UserDetails.startdate[0]}} & {{UserDetails.enddate[0]}})</h3>
+          <h4>
+        {{UserDetails.companyname[0]}}
+          </h4>
+          <p>
+            {{UserDetails.companyaddress[0]}}
+          </p>
+          <h4>{{UserDetails.keyresponsibilities[0]}}</h4>
+        </article>
+        <article class="work">
+          <h3>{{UserDetails.title[1]}} ({{UserDetails.startdate[1]}} & {{UserDetails.enddate[1]}})</h3>
+          <h4>
+        {{UserDetails.companyname[1]}}
+          </h4>
+          <p>
+            {{UserDetails.companyaddress[1]}}
+          </p>
+          <h4>{{UserDetails.keyresponsibilities[1]}}</h4>
+        </article>
+
+        <article class="work">
+          <h3>{{UserDetails.title[2]}} ({{UserDetails.startdate[2]}} & {{UserDetails.enddate[2]}})</h3>
+          <h4>
+        {{UserDetails.companyname[2]}}
+          </h4>
+          <p>
+            {{UserDetails.companyaddress[2]}}
+          </p>
+          <h4>{{UserDetails.keyresponsibilities[2]}}</h4>
+        </article>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+
+        <article class="school">
+          <h3>{{UserDetails.qualification[0]}}</h3>
+            <p>({{UserDetails.coursestartdate[0]}} &gt; {{UserDetails.courseenddate[0]}})</p>
+          <h4>{{UserDetails.institution[0]}}</h4>
+         
+        </article>
+
+        <article class="school">
+          <h3>{{UserDetails.qualification[1]}}</h3>
+            <p>({{UserDetails.coursestartdate[1]}} &gt; {{UserDetails.courseenddate[1]}})</p>
+          <h4>{{UserDetails.institution[1]}}</h4>
+         
+        </article>
+        <article class="school">
+          <h3>{{UserDetails.qualification[2]}}</h3>
+            <p>({{UserDetails.coursestartdate[2]}} &gt; {{UserDetails.courseenddate[2]}})</p>
+          <h4>{{UserDetails.institution[2]}}</h4>
+         
+        </article>
+        <article class="school">
+          <h3>{{UserDetails.qualification[3]}}</h3>
+            <p>({{UserDetails.coursestartdate[3]}} &gt; {{UserDetails.courseenddate[3]}})</p>
+          <h4>{{UserDetails.institution[3]}}</h4>
+         
+        </article>
+        <article class="school">
+          <h3>{{UserDetails.qualification[4]}}</h3>
+            <p>({{UserDetails.coursestartdate[4]}} &gt; {{UserDetails.courseenddate[4]}})</p>
+          <h4>{{UserDetails.institution[4]}}</h4>
+         
+        </article>
+        <section id="hobbies">
+          <h2>{{UserDetails.fieldname}}</h2>
+  
+          <ul>
+            <li>{{UserDetails.fieldinput}}</li>
+            
+           
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <aside id="sidebar">
+      <section id="work-experience">
+        <h2>Profile</h2>
+
+        <article class="experience">
+         
+          <p>
+           {{UserDetails.summary}}
+          </p>
+          
+        </article>
+      </section>
+
+      <section id="hobbies">
+        <h2>Skills</h2>
+
+        <ul>
+          <li>{{UserDetails.skill[0]}}</li>
+          <li>{{UserDetails.skill[1]}}</li>
+          <li>{{UserDetails.skill[2]}}</li>
+         
+        </ul>
+      </section>
+      <section id="hobbies">
+        <h2>Interests</h2>
+
+        <ul>
+          <li>{{UserDetails.interest[0]}}</li>
+          <li>{{UserDetails.interest[1]}}</li>
+          <li>{{UserDetails.interest[2]}}</li>
+         
+        </ul>
+      </section>
+     
+      <section id="hobbies">
+        <h2>Languages</h2>
+
+        <ul>
+          <li>{{UserDetails.languagename[0]}}</li>
+          <li>{{UserDetails.languagename[1]}}</li>
+          <li>{{UserDetails.languagename[2]}}</li>
+         
+        </ul>
+      </section>
+     
+
+    </aside>
+    <div class="clr"></div>
+  
+  </div>
+
+</div>
+</div>
+
+
+<div  >
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+  <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>	
+
+</div>
+</div>

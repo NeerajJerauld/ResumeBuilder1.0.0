@@ -1,0 +1,463 @@
+
+<div class="row-2" class="userdetails">
+  <div class="col-12">
+      <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <div class="title">
+                {{title}}
+              </div>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                  <div class="col-12">
+                      <div class="container">
+                          <div class="content">
+                            <form  #userform="ngForm" (ngSubmit)="updateUser()">
+                              <div class="user-details" >
+                              
+                                <div class="input-box">
+                                  <span class="details">Name:  </span>
+                                  <input type="text" name="name" placeholder="name" [(ngModel)]="userDetails.name" >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Summary:  </span>
+                                 <input name="summary" [(ngModel)]="userDetails.summary">
+                                </div>
+                              
+                                <div class="input-box">
+                                  <span class="details">Phone Number </span>
+                                  <input type="text" name="phoneNumber" placeholder="Enter your number"[(ngModel)]="userDetails.phoneNumber" >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Address </span>
+                                  <input type="textarea" name="address" placeholder="Address"[(ngModel)]="userDetails.address" >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">City </span>
+                                  <input type="text" name="city"placeholder="City" [(ngModel)]="userDetails.city">
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Pincode </span>
+                                  <input type="text" name="pincode" placeholder="Pincode"[(ngModel)]="userDetails.pincode" >
+                                </div>
+                              </div>
+
+                                <h1>Education 1</h1>
+                            
+                                <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details" >Qualification </span>
+                                  
+                                  <input type="text"  name="Qualification1"   [(ngModel)]=educationDetails.Qualification[0]>
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Institution *</span>
+                                  <input type="text" name="Institute1" [(ngModel)]=educationDetails.Institute[0]  >
+                                </div>
+                               
+                                <div class="input-box">
+                                  <span class="details">Start Date *</span>
+                                  <input type="date" name="CourseStartDate1" [(ngModel)]=educationDetails.CourseStartDate[0]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">End Date / Present </span>
+                                  <input type="text" name="CourseEndDate1" [(ngModel)]=educationDetails.CourseEndDate[0]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details"> Course</span>
+                                  <input type="Course" name="Course1" [(ngModel)]=educationDetails.Course[0]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Year Of Complition</span>
+                                  <input type="text" name="year1" [(ngModel)]=educationDetails.year[0]  >
+                                </div>
+                                </div>
+
+                                <h1>Education 2</h1>
+                            
+                                <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details" >Qualification </span>
+                                  
+                                  <input type="text"  name="Qualification2" [(ngModel)]=educationDetails.Qualification[1]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Institution </span>
+                                  <input type="text" name="Institute2" [(ngModel)]=educationDetails.Institute[1]>
+                                </div>
+                               
+                                <div class="input-box">
+                                  <span class="details">Start Date *</span>
+                                  <input type="date" name="CourseStartDate2" [(ngModel)]=educationDetails.CourseStartDate[1]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">End Date / Present *</span>
+                                  <input type="text" name="CourseEndDate2" [(ngModel)]=educationDetails.CourseEndDate[1]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details"> Course</span>
+                                  <input type="Course" name="Course2" [(ngModel)]=educationDetails.Course[1]>
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Year Of Complition</span>
+                                  <input type="text" name="year2" [(ngModel)]=educationDetails.year[1]  >
+                                </div>
+                                </div>
+
+                                <h1>Education 3</h1>
+                               
+                                <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details" >Qualification </span>
+                                  
+                                  <input type="text"  name="Qualification3" [(ngModel)]=educationDetails.Qualification[2] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Institution </span>
+                                  <input type="text" name="Institute3" [(ngModel)]=educationDetails.Institute[2] >
+                                </div>
+                               
+                                <div class="input-box">
+                                  <span class="details">Start Date </span>
+                                  <input type="date" name="CourseStartDate3" [(ngModel)]=educationDetails.CourseStartDate[2]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">End Date / Present </span>
+                                  <input type="text" name="CourseEndDate3" [(ngModel)]=educationDetails.CourseEndDate[2]>
+                                </div>
+                                <div class="input-box">
+                                  <span class="details"> Course</span>
+                                  <input type="Course" name="Course3" [(ngModel)]=educationDetails.Course[2] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Year Of Complition</span>
+                                  <input type="text" name="year3" [(ngModel)]=educationDetails.year[2] >
+                                </div>
+                                </div>
+
+                                <h1>Education 4</h1>
+
+                                  <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details" >Qualification </span>
+                                  
+                                  <input type="text"  name="Qualification4" [(ngModel)]=educationDetails.Qualification[3]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Institution </span>
+                                  <input type="text" name="Institute4" [(ngModel)]=educationDetails.Institute[3]  >
+                                </div>
+                               
+                                <div class="input-box">
+                                  <span class="details">Start Date </span>
+                                  <input type="date" name="CourseStartDate4" [(ngModel)]=educationDetails.CourseStartDate[3]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">End Date / Present </span>
+                                  <input type="text" name="CourseEndDate4" [(ngModel)]=educationDetails.CourseEndDate[3]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details"> Course</span>
+                                  <input type="Course" name="Course4" [(ngModel)]=educationDetails.Course[3]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Year Of Complition</span>
+                                  <input type="text" name="year4" [(ngModel)]=educationDetails.year[3] >
+                                </div>
+                                  </div>
+
+                                <h1>Education 5</h1>
+
+                                   <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details" >Qualification </span>
+                                  
+                                  <input type="text"  name="Qualification5" [(ngModel)]=educationDetails.Qualification[4]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Institution </span>
+                                  <input type="text" name="Institute5" [(ngModel)]=educationDetails.Institute[4]  >
+                                </div>
+                               
+                                <div class="input-box">
+                                  <span class="details">Start Date </span>
+                                  <input type="date" name="CourseStartDate5" [(ngModel)]=educationDetails.CourseStartDate[4]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">End Date / Present </span>
+                                  <input type="text" name="CourseEndDate5" [(ngModel)]=educationDetails.CourseEndDate[4]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details"> Course</span>
+                                  <input type="Course" name="Course5" [(ngModel)]=educationDetails.Course[4]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Year Of Complition</span>
+                                  <input type="text" name="year5" [(ngModel)]=educationDetails.year[4]  >
+                                </div>
+                                   </div>
+
+                                <h1>Experience 1</h1>
+                            
+                                <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details">Title</span>
+                                  <input type="text" name="Title1" [(ngModel)]=experienceDetails.Title[0]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Company Name</span>
+                                  <input type="text" name="CompanyName1" [(ngModel)]=experienceDetails.CompanyName[0] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Company Address</span>
+                                  <input type="text" name="CompanyAddress1" [(ngModel)]=experienceDetails.CompanyAddress[0] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Key Responsibilities</span>
+                                  <input  [(ngModel)]=experienceDetails.Key[0] name="Key Responsibilities1" >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Start date</span>
+                                  <input type="date" name="StartDate1" [(ngModel)]=experienceDetails.StartDate[0] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">End Date / Present</span>
+                                  <input type="text"  name="EndDate1" [(ngModel)]=experienceDetails.EndDate[0]>
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Achivements</span>
+                                  <input type="text" name="Achivements1" [(ngModel)]=experienceDetails.Achivements[0] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Reference</span>
+                                  <input type="text" name="Reference1" [(ngModel)]=experienceDetails.Reference[0] >
+                                </div>
+                                </div>
+
+                                <h1>Experience 2</h1>
+                            
+                                <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details">Title</span>
+                                  <input type="text" name="Title2" [(ngModel)]=experienceDetails.Title[1]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Company Name</span>
+                                  <input type="text" name="CompanyName2" [(ngModel)]=experienceDetails.CompanyName[1] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Company Address</span>
+                                  <input type="text" name="CompanyAddress2" [(ngModel)]=experienceDetails.CompanyAddress[1]>
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Key Responsibilities</span>
+                                  <input  [(ngModel)]=experienceDetails.Key[1] name="Key Responsibilities2" >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Start date</span>
+                                  <input type="date" name="StartDate2" [(ngModel)]=experienceDetails.StartDate[1] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">End Date / Present</span>
+                                  <input type="text"  name="EndDate2" [(ngModel)]=experienceDetails.EndDate[1] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Achivements</span>
+                                  <input type="text" name="Achivements2" [(ngModel)]=experienceDetails.Achivements[1] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Reference</span>
+                                  <input type="text" name="Reference2" [(ngModel)]=experienceDetails.Reference[1]  >
+                                </div>
+                                </div>
+
+                                <h1>Experience 3</h1>
+                                
+                                <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details">Title</span>
+                                  <input type="text" name="Title3" [(ngModel)]=experienceDetails.Title[2] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Company Name</span>
+                                  <input type="text" name="CompanyName3" [(ngModel)]=experienceDetails.CompanyName[2]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Company Address</span>
+                                  <input type="text" name="CompanyAddress3" [(ngModel)]=experienceDetails.CompanyAddress[2]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Key Responsibilities</span>
+                                  <input  [(ngModel)]=experienceDetails.Key[2] name="Key Responsibilities3" >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Start date</span>
+                                  <input type="date" name="StartDate3" [(ngModel)]=experienceDetails.StartDate[2]>
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">End Date / Present</span>
+                                  <input type="text"  name="EndDate3" [(ngModel)]=experienceDetails.EndDate[2]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Achivements</span>
+                                  <input type="text" name="Achivements3" [(ngModel)]=experienceDetails.Achivements[2]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Reference</span>
+                                  <input type="text" name="Reference3" [(ngModel)]=experienceDetails.Reference[2]  >
+                                </div>
+                                </div>
+
+                                <h1>Other Details 1</h1>
+
+                              <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details">Project</span>
+                                  <input type="text" name="project1" [(ngModel)]=otherDetails.project[0] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Project Description</span>
+                                  <input type="text" name="description1" [(ngModel)]=otherDetails.description[0]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Skills </span>
+                                  <input type="text" name="skills1" [(ngModel)]=otherDetails.skills[0] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Interests</span>
+                                  <input type="text" name="Interest1" [(ngModel)]=otherDetails.interest[0]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Certificates</span>
+                                   <input type="text" name="certificate1" [(ngModel)]=otherDetails.certificate[0]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Year</span>
+                                  <input type="text" name="certificateyear1" [(ngModel)]=otherDetails.certificateyear[0] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Language </span>
+                                  <input type="text" name="language1" [(ngModel)]=otherDetails.language[0] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Language proficiency</span>
+                                  <input type="text" name="proficiency1" [(ngModel)]=otherDetails.proficiency[0] >
+                                </div>
+                                <div class="input-box col-md-12">
+                                  <span class="details">Field Name</span>
+                                  <input type="text" name="FieldName" [(ngModel)]="otherDetails.fieldname"  >
+                                 
+                                </div>
+                                <div class="input-box col-md-12">
+                                <span class="details">Field input </span>  
+                              <input type="text" name="Fieldinput" [(ngModel)]="otherDetails. fieldinput"  >
+                            </div> 
+                                </div>
+
+                                <h1>Other Details 2</h1>
+                              
+                                <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details">Project</span>
+                                  <input type="text" name="project2" [(ngModel)]=otherDetails.project[1]>
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Project Description</span>
+                                  <input type="text" name="description2" [(ngModel)]=otherDetails.description[1]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Skills *</span>
+                                  <input type="text" name="skills2" [(ngModel)]=otherDetails.skills[1]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Interests</span>
+                                  <input type="text" name="Interest2" [(ngModel)]=otherDetails.interest[1] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Certificates</span>
+                                  <input type="text" name="certificate2" [(ngModel)]=otherDetails.certificate[1] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Year</span>
+                                  <input type="text" name="certificateyear2" [(ngModel)]=otherDetails.certificateyear[1] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Language *</span>
+                                  <input type="text" name="language2" [(ngModel)]=otherDetails.language[1] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Language proficiency</span>
+                                  <input type="text" name="proficiency2" [(ngModel)]=otherDetails.proficiency[1]  >
+                                </div>
+                                </div>
+
+                                <h1>Other Details 3</h1>
+                                
+                                <div class="user-details" >
+                                <div class="input-box">
+                                  <span class="details">Project</span>
+                                  <input type="text" name="project3" [(ngModel)]=otherDetails.project[2]>
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Project Description</span>
+                                  <input type="text" name="description3" [(ngModel)]=otherDetails.description[2] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Skills </span>
+                                  <input type="text" name="skills3" [(ngModel)]=otherDetails.skills[2]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Interests</span>
+                                  <input type="text" name="Interest3" [(ngModel)]=otherDetails.interest[2]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Certificates</span>
+                                  <input type="text" name="certificate3" [(ngModel)]=otherDetails.certificate[2] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Year</span>
+                                  <input type="text" name="certificateyear3" [(ngModel)]=otherDetails.certificateyear[2]  >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Language </span>
+                                  <input type="text" name="language3" [(ngModel)]=otherDetails.language[2] >
+                                </div>
+                                <div class="input-box">
+                                  <span class="details">Language proficiency</span>
+                                  <input type="text" name="proficiency3" [(ngModel)]=otherDetails.proficiency[2] >
+                                </div>
+                              </div>
+                              <div class="row ">
+                                <div class="button col-md-6">
+                                   <button  routerLink="/templates"> Back  </button>
+                                </div>
+                                <div class="button col-md-6">
+                                  <input type="submit" [disabled]="userform.form.invalid" value="UPDATE">
+                                  </div>
+                            </div>
+                       
+                            </form>
+                          </div>
+                        </div>
+                      
+                  </div>             
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      
+  
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+     

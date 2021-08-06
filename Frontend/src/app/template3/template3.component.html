@@ -1,0 +1,271 @@
+<ngx-spinner  type="ball-spin-clockwise" ></ngx-spinner>
+<div *ngFor="let UserDetails of userDetails">
+<div id = "Content">
+<div class="main" *ngFor="let  UserDetails of userDetails">
+<div class="resume_wrapper" >
+	<div class="resume_left">
+		<div class="resume_image">
+			<img src={{UserDetails.image}} alt="Resume_image">
+		</div>
+		<div class="resume_bottom">
+			<div class="resume_item resume_namerole">
+				<div class="name">{{UserDetails.name}}</div>
+				<!-- <div class="role">UI Designer</div> -->
+			</div>
+			<div class="resume_item resume_profile">
+				<div class="resume_title">Profile</div>
+				<div class="resume_info">{{UserDetails.summary}}</div>
+			</div>
+			<div class="resume_item resume_address">
+				<div class="resume_title">Address</div>
+				<div class="resume_info">
+					{{UserDetails.address}},<br/>
+					{{UserDetails.city}},<br/>
+					{{UserDetails.pincode}}
+				</div>
+			</div>
+			<div class="resume_bottom">
+				<div class="resume_item resume_namerole">
+					<div class="name">{{UserDetails.name}}</div>
+					<!-- <div class="role">UI Designer</div> -->
+				</div>
+				<div class="resume_item resume_profile">
+					<div class="resume_title">Profile</div>
+					<div class="resume_info">{{UserDetails.summary}}</div>
+				</div>
+				<div class="resume_item resume_address">
+					<div class="resume_title">Address</div>
+					<div class="resume_info">
+						{{UserDetails.address}},<br/>
+						{{UserDetails.city}},<br/>
+						{{UserDetails.pincode}}
+					</div>
+				</div>
+				<div class="resume_item resume_contact">
+					<div class="resume_title">Contact</div>
+					<div class="resume_info">
+						<div class="resume_subtitle">Phone</div>
+						<div class="resume_subinfo">{{UserDetails.phonenumber}}</div>
+					</div>
+					<div class="resume_info">
+						<div class="resume_subtitle">Email</div>
+						<div class="resume_subinfo">{{UserDetails.email}}</div>
+					</div>
+				</div>
+				<div class="resume_item resume_skills">
+					<div class="resume_title">Skills</div>
+					<div class="resume_info">
+						<div class="skills_list">
+							<div class="skills_left">{{UserDetails.skill[0]}}</div>
+							<!-- <div class="skills_bar">
+								<p>
+									<span style="width: 90%"></span>
+								</p>
+							</div> -->
+						</div>
+						<!-- <div class="skills_list">
+							<div class="skills_left">CSS</div>
+							<div class="skills_bar">
+								<p>
+									<span style="width: 80%"></span>
+								</p>
+							</div>
+						</div> -->
+						<div class="skills_list">
+							<div class="skills_left">{{UserDetails.skill[1]}}</div>
+							<!-- <div class="skills_bar">
+								<p>
+									<span style="width: 50%"></span>
+								</p>
+							</div> -->
+						</div>
+						<div class="skills_list">
+							<div class="skills_left">{{UserDetails.skill[2]}}</div>
+							<!-- <div class="skills_bar">
+								<p>
+									<span style="width: 95%"></span>
+								</p>
+							</div> -->
+						</div>
+					</div>
+				</div>
+				
+				
+			<!-- </div> -->
+				<div class="resume_item resume_skills">
+					<div class="resume_title">Languages</div>
+					<div class="resume_info">
+						<div class="skills_list">
+							<div class="skills_left">{{UserDetails.languagename[0]}}</div>
+							<!-- <div class="skills_bar">
+								<p>
+									<span style="width: 90%"></span>
+								</p>
+							</div> -->
+						</div>
+						<!-- <div class="skills_list">
+							<div class="skills_left">CSS</div>
+							<div class="skills_bar">
+								<p>
+									<span style="width: 80%"></span>
+								</p>
+							</div>
+						</div> -->
+						<div class="skills_list">
+							<div class="skills_left">{{UserDetails.languagename[1]}}</div>
+							<!-- <div class="skills_bar">
+								<p>
+									<span style="width: 50%"></span>
+								</p>
+							</div> -->
+						</div>
+						<div class="skills_list">
+							<div class="skills_left">{{UserDetails.languagename[2]}}</div>
+							<!-- <div class="skills_bar">
+								<p>
+									<span style="width: 95%"></span>
+								</p>
+							</div> -->
+						</div>
+					</div>
+				</div>
+
+				<div class="resume_item resume_skills">
+					<div class="resume_title">{{UserDetails.fieldname}}</div>
+					<div class="resume_info">
+						<div class="skills_list">
+							<div class="skills_left">{{UserDetails.fieldinput}}</div>
+							<!-- <div class="skills_bar">
+								<p>
+									<span style="width: 90%"></span>
+								</p>
+							</div> -->
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
+				<!-- </div> -->
+
+			</div>
+		</div>
+		<div class="resume_right">
+			<div class="resume_item resume_namerole">
+				<div class="name">{{UserDetails.name}}</div>
+				<!-- <div class="role">UI Designer</div> -->
+			</div>
+			<div class="resume_item resume_education">
+				<div class="resume_title">Education</div>
+				<div class="resume_info">
+					<div class="resume_data">
+						<div class="year">{{UserDetails.coursestartdate[0]}} - {{UserDetails.courseenddate[0]}} </div>
+						<div class="content">
+							<p>{{UserDetails.qualification[0]}}</p>
+							<p>{{UserDetails.institution[0]}}</p>
+						</div>
+					</div>
+					<div class="resume_data">
+						<div class="year">{{UserDetails.coursestartdate[1]}} - {{UserDetails.courseenddate[1]}}</div>
+						<div class="content">
+							<p>{{UserDetails.qualification[1]}}</p>
+							<p>{{UserDetails.institution[1]}}</p>
+						</div>
+					</div>
+					<div class="resume_data">
+						<div class="year">{{UserDetails.coursestartdate[2]}} - {{UserDetails.courseenddate[2]}}</div>
+						<div class="content">
+							<p>{{UserDetails.qualification[2]}}</p>
+							<p>{{UserDetails.institution[2]}}</p>
+						</div>
+					</div>
+		
+				<div class="resume_data">
+					<div class="year">{{UserDetails.coursestartdate[3]}} - {{UserDetails.courseenddate[3]}}</div>
+					<div class="content">
+						<p>{{UserDetails.qualification[3]}}</p>
+						<p>{{UserDetails.institution[3]}}</p>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="resume_item resume_experience">
+				<div class="resume_title">Experience</div>
+				<div class="resume_info">
+					<div class="resume_data">
+						<div class="year">{{UserDetails.startdate[0]}} - {{UserDetails.enddate[0]}}</div>
+						<div class="content">
+							<p>{{UserDetails.title[0]}}</p>
+							<p>{{UserDetails.companyname[0]}},{{UserDetails.companyaddress[0]}}</p>
+							<p>{{UserDetails.keyresponsibilities[0]}}</p>
+							<p>{{UserDetails.achivements[0]}}</p>
+						</div>
+					</div>
+			
+					<div class="resume_data">
+						<div class="year">{{UserDetails.startdate[1]}} - {{UserDetails.enddate[1]}}</div>
+						<div class="content">
+							<p>{{UserDetails.title[1]}}</p>
+							<p>{{UserDetails.companyname[1]}},{{UserDetails.companyaddress[1]}}</p>
+							<p>{{UserDetails.keyresponsibilities[1]}}</p>
+							<p>{{UserDetails.achivements[1]}}</p>
+						</div>
+					</div>
+	
+					<div class="resume_data">
+						<div class="year">{{UserDetails.startdate[2]}} - {{UserDetails.enddate[2]}}</div>
+						<div class="content">
+							<p>{{UserDetails.title[2]}}</p>
+							<p>{{UserDetails.companyname[2]}},{{UserDetails.companyaddress[2]}}</p>
+							<p>{{UserDetails.keyresponsibilities[2]}}</p>
+							<p>{{UserDetails.achivements[2]}}</p>
+						</div>
+					</div>
+			</div>
+			</div>
+			<div class="resume_item resmue_interests">
+				<div class="resume_title">Interests</div>
+				<div class="resume_info">
+					<div class="interests">
+						<div class="int_icon">
+							<!-- <i class="fas fa-volleyball-ball"></i> -->
+						</div>
+						<div class="int_data">{{UserDetails.interest[0]}},</div>
+					</div>
+					<div class="interests">
+						<div class="int_icon">
+							<!-- <i class="fas fa-book-open"></i> -->
+						</div>
+						<div class="int_data">{{UserDetails.interest[1]}}</div>
+					</div>
+					<div class="interests">
+						<div class="int_icon">
+							<!-- <i class="fas fa-film"></i> -->
+						</div>
+						<div class="int_data">{{UserDetails.interest[2]}}</div>
+					</div>
+					<!-- <div class="interests">
+						<div class="int_icon">
+							<i class="fas fa-biking"></i>
+						</div>
+						<div class="int_data">Riding</div>
+					</div> -->
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>>
+	
+
+
+</div>
+
+</div>
+
+
+<div  >
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+    <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>	
+</div>
+
+</div>
+

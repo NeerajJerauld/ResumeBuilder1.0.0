@@ -7,7 +7,7 @@
         <p>
             With our online Resume maker, it is simple for anyone to quickly create a professional Resumes. Enter your personal details and begin filling out your Resume content. Finally, choose one of  available Resume layouts, and download or save your resumes.</p>
     <!--login-btn-->
-    <a href="#" class="main-login">Log in</a>
+    <a routerLink="/login" *ngIf="_auth.loggedIn() === false" class="main-login">Log in</a>
     </div>
     <!--img-->
     <div class="home-img">
@@ -58,15 +58,15 @@
         <p id="box-p1">Log-In to our secure website</p>
         <p id="box-p2">Create an awesome resume,  or online profile without leaving your web browser.</p>
         <!--btn--------->
-        <a href="#">Log In</a>
+        <!-- <a href="#">Log In</a> -->
     </div>
     <!--box-2-------->
     <div class="box">
         <img src="../../assets/images/account view.svg">
-        <p id="box-p1"> Add Infromations</p>
+        <p id="box-p1"> Add Informations</p>
         <p id="box-p2">let you add informations in a few clicks, and give you instant suggestions for what employers want</p>
         <!--btn--------->
-        <a href="#">Create</a>
+        <!-- <a href="#">Create</a> -->
     </div>
     <!--box-3-------->
     <div class="box">
@@ -74,7 +74,7 @@
         <p id="box-p1">Select Your Template</p>
         <p id="box-p2">Professionally-designed resume templates. Just edit and download in 5 minutes.</p>
         <!--btn--------->
-        <a href="#">Select Template</a>
+        <!-- <a href="#">Select Template</a> -->
     </div>
     <!--box-4-------->
     <div class="box">
@@ -83,7 +83,7 @@
         <p id="box-p2">
             Your CVs are stored in your own personal and safe account hub. This allows you to both edit and download your CVs whenever, and wherever, you require.</p>
         <!--btn--------->
-        <a href="#">Log In</a>
+        <!-- <a href="#">Log In</a> -->
     </div>
     <!--box-1-------->
     <div class="box">
@@ -91,7 +91,7 @@
         <p id="box-p1">Download your Resume</p>
         <p id="box-p2">Instantly download your completed resumes in  PDF formats.Our professional resume templates are Applicant Tracking System friendly (and won’t be rejected by HR software), giving you a competitive edge.</p>
         <!--btn--------->
-        <a href="#">Create</a>
+        <!-- <a href="#">Create</a> -->
     </div>
 </div>
 </section>

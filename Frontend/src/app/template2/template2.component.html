@@ -1,0 +1,156 @@
+<ngx-spinner  type="ball-spin-clockwise" ></ngx-spinner>
+
+<div *ngFor="let UserDetails of userDetails" >
+<div id = "Content">
+<div class="main" *ngFor="let UserDetails of userDetails">
+<div class="container" >
+    <aside>
+        <img class="personal-img" alt="personal image" src={{UserDetails.image}}>
+        <h2 class="person-name"> {{UserDetails.name}}</h2>
+        <ul class="personal-details">
+            <!-- <li> <i class="fas fa-user-tie"></i> Web Developer</li> -->
+            <li> <i class="fas fa-globe-asia"></i> {{UserDetails.address}}, {{UserDetails.city}},{{UserDetails.pincode}}</li>
+            <li> <i class="fas fa-inbox"></i> {{UserDetails.email}}</li>
+            <li> <i class="fas fa-phone"></i> {{UserDetails.phonenumber}}</li>
+        </ul>
+
+
+        <hr>
+        <h2 class="head-section"><i class="fas fa-gem"></i> Skills </h2>
+        <ul class="details-list">
+            <li>
+               {{UserDetails.skill[0]}}
+                <!-- <div class="progress-back">
+                    <div class="progress p-85"><h4 class="progress-text">85%</h4> </div>
+                </div> -->
+            </li>
+            <li>
+                {{UserDetails.skill[1]}}
+                <!-- <div class="progress-back">
+                    <div class="progress p-75"><h4 class="progress-text">75%</h4> </div>
+                </div> -->
+            </li>
+            <li>
+                {{UserDetails.skill[2]}}
+                <!-- <div class="progress-back">
+                    <div class="progress p-90"><h4 class="progress-text">90%</h4> </div>
+                </div> -->
+            </li>
+            <!-- <li>
+                Team Work
+                <div class="progress-back">
+                    <div class="progress p-95"><h4 class="progress-text">95%</h4> </div>
+                </div>
+            </li> -->
+        </ul>
+        <hr>
+      
+        <h2 class="head-section"><i class="fas fa-language"></i> Languages </h2>
+        <ul class="details-list">
+            <li> 
+           {{UserDetails.languagename[0]}}
+            <!-- <div class="progress-back">
+                <div class="progress p-100"><h4 class="progress-text">100%</h4> </div>
+            </div> -->
+            </li>
+            <li>
+            {{UserDetails.languagename[1]}}
+            <!-- <div class="progress-back">
+                <div class="progress p-85"><h4 class="progress-text">85%</h4> </div>
+            </div> -->
+            </li>
+            <li>
+            {{UserDetails.languagename[2]}}
+            <!-- <div class="progress-back">
+                <div class="progress p-30"><h4 class="progress-text">30%</h4> </div>
+            </div> -->
+            </li>
+            
+        </ul>
+        <hr>
+        <h2 class="head-section">{{UserDetails.fieldname}} </h2>
+        <ul class="details-list">
+            <li> 
+           {{UserDetails.fieldinput}}
+
+            <!-- <div class="progress-back">
+                <div class="progress p-100"><h4 class="progress-text">100%</h4> </div>
+            </div> -->
+            </li>
+           
+            </ul>
+        <!-- <hr> -->
+    </aside>
+
+    <main>
+        <section id="first-section">
+            <h2 class="head-section"><i class="fas fa-briefcase"></i> Work Experience </h2>
+            <div class="data-details">
+                <h3>{{UserDetails.title[0]}} / {{UserDetails.companyname[0]}}</h3>
+                <span><i class="fas fa-calendar-alt"></i> {{UserDetails.startdate[0]}} - <span><i class="fas fa-calendar-alt"></i>{{UserDetails.enddate[0]}}</span></span>
+                <p>{{UserDetails.keyresponsibilities[0]}}</p>
+                <h5>{{UserDetails.achivements[0]}}</h5>
+            </div>
+            <hr>
+            <div class="data-details">
+                <h3>{{UserDetails.title[1]}} / {{UserDetails.companyname[1]}}</h3>
+                <span><i class="fas fa-calendar-alt"></i> {{UserDetails.startdate[1]}} - <span><i class="fas fa-calendar-alt"></i>{{UserDetails.enddate[1]}}</span></span>
+                <p>{{UserDetails.keyresponsibilities[1]}}</p>
+                <h5>{{UserDetails.achivements[1]}}</h5>
+            </div>
+            <hr>
+            <div class="data-details">
+                <h3>{{UserDetails.title[2]}} / {{UserDetails.companyname[2]}}</h3>
+                <span><i class="fas fa-calendar-alt"></i> {{UserDetails.startdate[2]}} - <span><i class="fas fa-calendar-alt"></i>{{UserDetails.enddate[2]}}</span></span>
+                <p>{{UserDetails.keyresponsibilities[2]}}</p>
+                <h5>{{UserDetails.achivements[2]}}</h5>
+            </div>
+        <!-- </section> -->
+
+        <!-- <section> -->
+            <h2 class="head-section"><i class="fas fa-user-graduate"></i> Education </h2>
+            <div class="data-details">
+                <h3>{{UserDetails.qualification[0]}} - </h3>
+                <span><i class="fas fa-calendar-alt"></i> {{UserDetails.coursestartdate[0]}} - <span>{{UserDetails.courseenddate[0]}}</span></span>
+                <p>{{UserDetails.institution[0]}}</p>
+            </div>
+            <hr>
+            <div class="data-details">
+                <h3>{{UserDetails.qualification[1]}} - </h3>
+                <span><i class="fas fa-calendar-alt"></i> {{UserDetails.coursestartdate[1]}} - <span>{{UserDetails.courseenddate[1]}}</span></span>
+                <p>{{UserDetails.institution[1]}}</p>
+            </div>
+            <hr>
+            <div class="data-details">
+                <h3>{{UserDetails.qualification[2]}} - </h3>
+                <span><i class="fas fa-calendar-alt"></i> {{UserDetails.coursestartdate[2]}} - <span>{{UserDetails.courseenddate[2]}}</span></span>
+                <p>{{UserDetails.institution[2]}}</p>
+            </div>
+            <hr>
+            <div class="data-details">
+                <h3>{{UserDetails.qualification[3]}} - </h3>
+                <span><i class="fas fa-calendar-alt"></i> {{UserDetails.coursestartdate[3]}} - <span>{{UserDetails.courseenddate[3]}}</span></span>
+                <p>{{UserDetails.institution[3]}}</p>
+            </div>
+            <hr>
+            <div class="data-details">
+                <h3>{{UserDetails.qualification[4]}} - </h3>
+                <span><i class="fas fa-calendar-alt"></i> {{UserDetails.coursestartdate[4]}} - <span>{{UserDetails.courseenddate[4]}}</span></span>
+                <p>{{UserDetails.institution[4]}}</p>
+            </div>
+        </section>
+        
+
+    </main>
+</div>
+</div>
+</div>
+
+
+<!-- </div> -->
+
+<div  >
+	<button class="col-md-2" printSectionId="Content" ngxPrint [useExistingCss]="true">Download</button>
+    <button class="col-md-2" (click)="edituser(UserDetails)">Edit</button>	
+</div>
+</div>

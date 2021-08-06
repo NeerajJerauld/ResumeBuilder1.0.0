@@ -9,7 +9,7 @@ import { FormservicesService } from '../formservices.service';
 })
 export class WeblinkComponent implements OnInit {
   userDetails= [{
-    name:'name',
+    name:'',
     image:'',
     summary:'',
     email:'',
@@ -25,7 +25,7 @@ export class WeblinkComponent implements OnInit {
     Certificatetitle:[''],
     Certificateyear:[''],
     languagename:[''],
-    proficinery:[''],
+    // proficinery:[''],
   
     title:[''],
     companyname:[''],
@@ -44,10 +44,20 @@ export class WeblinkComponent implements OnInit {
     year:['']
   }]
 
-  constructor(private router: ActivatedRoute,public FormServices:FormservicesService) { }
+  constructor(public router: ActivatedRoute,public FormServices:FormservicesService) { }
   ngOnInit(): void {
+   
     this.router.params.subscribe(params => {
-      let userdata = params.userID;
+      // this.FormServices.getUserDetailsOnEmail(params.userID).subscribe((data)=>{
+
+      //   this.userDetails = JSON.parse(JSON.stringify(data));
+      // })
+      // this.userDetails = JSON.parse(JSON.stringify(this.FormServices.getUserDetailsOnEmail(params.userID)));
+      // this.userDetails= this.FormServices.getUserDetailsOnEmail(params.userID);
+      // this.userDetails = this.FormServices.getUserDetailsOnEmail(params.userID)
+      this.FormServices.getUserDetailsOnEmail(params.userID)
+      console.log("I am here!!!")
+      console.log(this.FormServices.getUserDetailsOnEmail(params.userID))
     })
   }
 

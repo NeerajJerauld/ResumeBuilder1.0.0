@@ -11,15 +11,35 @@ export class ExperienceComponent implements OnInit {
   title = 'Experience Details';
   constructor(private router:Router, private FormServices:FormservicesService) { }
   experienceDetails= {
-    Title:'',
-    CompanyName:'',
-    CompanyAddress:'',
-    Key:'',
-    StartDate:'',
-    EndDate:'',
-    Achivements:'',
-    Reference:''
+    Title:[''],
+    CompanyName:[''],
+    CompanyAddress:[''],
+    Key:[''],
+    StartDate:[''],
+    EndDate:[''],
+    Achivements:[''],
+    Reference:['']
   }
+ 
+Form1=false;
+Form2=true;
+Form3=true;
+
+f0(){
+  this.Form1=false;
+  this.Form2=true;
+  this.Form3=true;
+}
+f1(){
+  this.Form1=true;
+  this.Form2=false;
+  this.Form3=true;
+}
+f2(){
+  this.Form1=true;
+  this.Form2=true;
+  this.Form3=false;
+}
   navigate(){
     this.FormServices.setexperienceDetails(this.experienceDetails)
     this.router.navigate(["/form3"]);
