@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TemplatesComponent } from './templates/templates.component';
 import { ViewResumeComponent } from './view-resume/view-resume.component';
 import { ViewWebsiteComponent } from './view-website/view-website.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -47,6 +46,7 @@ import { Form1Component } from './form1/form1.component';
 import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
 import { FormservicesService } from './formservices.service';
+import { WeblinkComponent } from './weblink/weblink.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,6 @@ import { FormservicesService } from './formservices.service';
     LoginComponent,
     SigninComponent,
     DashboardComponent,
-    TemplatesComponent,
     ViewResumeComponent,
     ViewWebsiteComponent,
     NavbarComponent,
@@ -72,6 +71,7 @@ import { FormservicesService } from './formservices.service';
     Form1Component,
     Form2Component,
     Form3Component,
+    WeblinkComponent,
   ],
   imports: [
     BrowserModule,
