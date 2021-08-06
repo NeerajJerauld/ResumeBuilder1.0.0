@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { TemplatesComponent } from './templates/templates.component';
 import { ViewResumeComponent } from './view-resume/view-resume.component';
 import { ViewWebsiteComponent } from './view-website/view-website.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -45,6 +44,7 @@ import { Form1Component } from './form1/form1.component';
 import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
 import { FormservicesService } from './formservices.service';
+import { WeblinkComponent } from './weblink/weblink.component';
 import { AuthService } from './auth.service';
 import { Template1Component } from './template1/template1.component';
 import { Template2Component } from './template2/template2.component';
@@ -62,7 +62,6 @@ import { NgxSpinnerModule } from "ngx-spinner";
     LoginComponent,
     SigninComponent,
     DashboardComponent,
-    TemplatesComponent,
     ViewResumeComponent,
     ViewWebsiteComponent,
     NavbarComponent,
@@ -80,6 +79,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     Form1Component,
     Form2Component,
     Form3Component,
+    WeblinkComponent,
     Template1Component,
     Template2Component,
     Template3Component,

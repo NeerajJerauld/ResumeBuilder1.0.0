@@ -11,7 +11,6 @@ import { LoginComponent } from './login/login.component';
 
 import { SigninComponent } from './signin/signin.component';
 
-import { TemplatesComponent } from './templates/templates.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { ViewResumeComponent } from './view-resume/view-resume.component';
 import { ViewWebsiteComponent } from './view-website/view-website.component';
@@ -19,12 +18,14 @@ import { AuthGuard } from './auth.guard';
 import { Form1Component } from './form1/form1.component';
 import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
+import { WeblinkComponent } from './weblink/weblink.component';
 import { Template1Component } from './template1/template1.component';
 import { Template2Component } from './template2/template2.component';
 import { Template3Component } from './template3/template3.component';
 import { Template4Component } from './template4/template4.component';
 import { Template5Component } from './template5/template5.component';
 import { UpdatedetailsComponent } from './updatedetails/updatedetails.component';
+import { TemplatesComponent } from './templates/templates.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -50,6 +51,7 @@ const routes: Routes = [
     {path:"form2", component:Form2Component},
    
     {path:"form3",component:Form3Component},
+   {path:"weblink/:userID",component:WeblinkComponent},
     {path:"edit",component:UpdatedetailsComponent}
   
  

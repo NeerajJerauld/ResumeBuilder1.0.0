@@ -119,6 +119,41 @@ export class FormservicesService {
     courseenddate:[''],
     year:['']
   }]
+    weblinkDetails= [{
+    name:'',
+    image:'',
+    summary:'',
+    email:'',
+    phonenumber:'',
+    address:'',
+    city:'',
+    pincode:'',
+ 
+    projectname:[''],
+    projectdescription:[''],
+    skill:[''],
+    interest:[''],
+    Certificatetitle:[''],
+    Certificateyear:[''],
+    languagename:[''],
+    proficiency:[''],
+  
+    title:[''],
+    companyname:[''],
+    companyaddress:[''],
+    keyresponsibilities:[''],
+    startdate:[''],
+    enddate:[''],
+    achivements:[''],
+    references:[''],
+
+    qualification:[''],
+    institution:[''],
+    Course:[''],
+    coursestartdate:[''],
+    courseenddate:[''],
+    year:['']
+  }]
 
   getUser(){
      this.http.get('http://localhost:3000/getuser/'+this.userDetails.email).subscribe((data)=>{
@@ -130,7 +165,17 @@ export class FormservicesService {
     GetUser(){
       return this.UserDetails;
     }
-
+    getUserDetailsOnEmail(weblinkData:any){
+      console.log(weblinkData)
+      this.http.get('http://localhost:3000/getuser/'+weblinkData).subscribe((data)=>{
+        this.weblinkDetails=JSON.parse(JSON.stringify(data));
+        console.log("------------------------Database to Service")
+        console.log(data)
+        return(this.weblinkDetails);
+       })
+    
+     
+    }
  
     updateUser(UserDetails:any)
     {
