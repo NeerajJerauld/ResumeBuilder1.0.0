@@ -27,6 +27,9 @@ export class Template2Component implements OnInit {
     Certificateyear:[''],
     languagename:[''],
     proficiency:[''],
+
+    fieldname:'',
+    fieldinput:'',
   
     title:[''],
     companyname:[''],
@@ -36,6 +39,7 @@ export class Template2Component implements OnInit {
     enddate:[''],
     achivements:[''],
     references:[''],
+
 
     qualification:[''],
     institution:[''],

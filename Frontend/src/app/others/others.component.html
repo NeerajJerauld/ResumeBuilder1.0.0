@@ -47,7 +47,22 @@
                                     <span class="details">Language proficiency</span>
                                     <input type="text" name="proficiency1" [(ngModel)]="otherDetails.proficiency[0]" placeholder="proficinery" >
                                   </div>
-                                </div>
+                                  <input type="button" class='button btn-primary'
+                                  (click)='toggleImage()'value=" New field">
+                                    
+                                  
+                                  <div class="row" *ngIf='showImage' >
+                                  <div class="input-box col-md-12">
+                                    <span class="details">Field Name</span>
+                                    <input type="text" name="FieldName" [(ngModel)]="otherDetails.fieldname"  >
+                                   
+                                  </div>
+                                  <div class="input-box col-md-12">
+                                  <span class="details">Field input </span>  
+                                <input type="text" name="Fieldinput" [(ngModel)]="otherDetails. fieldinput"  >
+                              </div> 
+                            </div>
+                              </div>
                              
                                
                                 <div class="row ">

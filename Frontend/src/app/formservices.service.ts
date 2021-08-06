@@ -13,7 +13,8 @@ export class FormservicesService {
     phoneNumber:'',
     address:'',
     city:'',
-    pincode:''
+    pincode:'',
+    
   }
  otherDetails= {
     project:[],
@@ -23,7 +24,9 @@ export class FormservicesService {
     certificate:[],
     certificateyear:[],
     language:[],
-    proficiency:[]
+    proficiency:[],
+    fieldname:'',
+    fieldinput:''
   }
   experienceDetails= {
     Title:[],
@@ -97,6 +100,8 @@ export class FormservicesService {
     Certificateyear:[''],
     languagename:[''],
     proficiency:[''],
+    fieldname:'',
+    fieldinput:'',
   
     title:[''],
     companyname:[''],

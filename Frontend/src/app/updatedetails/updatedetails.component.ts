@@ -27,7 +27,9 @@ export class UpdatedetailsComponent implements OnInit {
     certificate:[],
     certificateyear:[],
     language:[],
-    proficiency:[]
+    proficiency:[],
+    fieldname:'',
+    fieldinput:'',
   }
   experienceDetails:any= {
     Title:[],
